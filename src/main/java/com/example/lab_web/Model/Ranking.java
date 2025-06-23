@@ -17,10 +17,9 @@ public class Ranking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private List<Cliente> cliente; 
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "ranking_id")
+    private List<Cliente> cliente = new ArrayList<>(); 
 
     public List<Cliente> getCliente() {
         return cliente;
