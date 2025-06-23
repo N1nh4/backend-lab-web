@@ -17,18 +17,63 @@ public class Avaliacao {
 
     private String comentario;
     private int nota;
-    
-    
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "cliente_id", referencedColumnName = "id", nullable = false)
     private Cliente cliente;
 
-    public Avaliacao() {}
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "informacoes_unidade_id", referencedColumnName = "id", nullable = false)
+    private InformacoesUnidade informacoesUnidade;
 
-    public Avaliacao(String comentario, Cliente cliente, int nota) {
+    public Avaliacao() {
+    }
+
+    public Avaliacao(String comentario, Cliente cliente, int nota, InformacoesUnidade informacoesUnidade) {
         this.comentario = comentario;
         this.cliente = cliente;
         this.nota = nota;
+        this.informacoesUnidade = informacoesUnidade;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    public int getNota() {
+        return nota;
+    }
+
+    public void setNota(int nota) {
+        this.nota = nota;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public InformacoesUnidade getInformacoesUnidade() {
+        return informacoesUnidade;
+    }
+
+    public void setInformacoesUnidade(InformacoesUnidade informacoesUnidade) {
+        this.informacoesUnidade = informacoesUnidade;
     }
 
     public void adicionarAvaliacao(String comentario) {
@@ -36,8 +81,7 @@ public class Avaliacao {
     }
 
     public void imprimirAvaliacao() {
-        System.out.println("Comentario: " + comentario);
-        System.out.println("Usuario: " + cliente.getNome());
-        System.out.println("Nota: " + nota);
+        System.out.println("Comentario: '" + comentario + "', Nota: " + nota + ", Cliente: "
+                + (cliente != null ? cliente.getNome() : "N/A"));
     }
 }
