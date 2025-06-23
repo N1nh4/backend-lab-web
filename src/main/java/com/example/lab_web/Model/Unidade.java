@@ -19,23 +19,58 @@ public class Unidade {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    private Status status;
-    
+    private Status statusAvaliacaoPadrao;
+
+    @Enumerated(EnumType.STRING)
+    private SemaforoStatus semaforoAtual;
+
     @OneToOne(mappedBy = "unidade", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private HistoricoDeAtualizacao historicoDeAtualizacao;
-    
+
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "informacoes_unidade_id", referencedColumnName = "id")
     private InformacoesUnidade informacoesUnidade;
 
-    public Unidade() {} 
+    public Unidade() {
+    }
 
-    public Unidade(String status, InformacoesUnidade informacoesUnidade, HistoricoDeAtualizacao historicoDeAtualizacao) {
-        this.status = Status.valueOf(status);
+    public Unidade(InformacoesUnidade informacoesUnidade, HistoricoDeAtualizacao historicoDeAtualizacao) {
         this.informacoesUnidade = informacoesUnidade;
+        this.historicoDeAtualizacao = historicoDeAtualizacao;
+        this.semaforoAtual = SemaforoStatus.INDETERMINADO;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public InformacoesUnidade getInformacoesUnidade() {
+        return informacoesUnidade;
+    }
+
+    public void setInformacoesUnidade(InformacoesUnidade informacoesUnidade) {
+        this.informacoesUnidade = informacoesUnidade;
+    }
+
+    public HistoricoDeAtualizacao getHistoricoDeAtualizacao() {
+        return historicoDeAtualizacao;
+    }
+
+    public void setHistoricoDeAtualizacao(HistoricoDeAtualizacao historicoDeAtualizacao) {
         this.historicoDeAtualizacao = historicoDeAtualizacao;
     }
 
+    public SemaforoStatus getSemaforoAtual() {
+        return semaforoAtual;
+    }
+
+    public void setSemaforoAtual(SemaforoStatus semaforoAtual) {
+        this.semaforoAtual = semaforoAtual;
+    }
 
     public void visualizarMapaUnidade() {
         System.out.println("Mapa da Unidade ");
@@ -47,9 +82,15 @@ public class Unidade {
 
     public void visualizarUnidade() {
         System.out.println("Informações da Unidade: ");
+        if (informacoesUnidade != null) {
+            informacoesUnidade.imprimirInformacoes();
+        }
     }
 
     public void gerarStatusAtualUnidade() {
-        System.out.println("Status atual da Unidade: " + status);
+        System.out.println("Status atual da Unidade (Semáforo): " + semaforoAtual);
+        if (informacoesUnidade != null && informacoesUnidade.getAvaliacao() != null) {
+            System.out.println("Baseado em " + informacoesUnidade.getAvaliacao().size() + " avaliações recentes.");
+        }
     }
 }
