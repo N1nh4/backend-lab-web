@@ -6,30 +6,23 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 
 @Entity
 public class Cliente extends Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String cpf;
     private String endereco;
     private String telefone;
     private int contribuicoes;
+
     
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "contribuicao_id")
-    private List<Contribuicao> contribuicoesLista;
+    
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<Contribuicao> contribuicoesLista = new ArrayList<>();
     
     public Cliente() {
-        
+        this.contribuicoesLista = new ArrayList<>();
     }
 
     public Cliente(String nome, String email, String senha, String dataNascimento, String cpf, String endereco, String telefone) {
@@ -39,7 +32,6 @@ public class Cliente extends Usuario {
         this.telefone = telefone;
         this.contribuicoes = 0; 
         this.contribuicoesLista = new ArrayList<>();
-        
     }
 
     public int getContribuicoes() {
@@ -57,6 +49,7 @@ public class Cliente extends Usuario {
 
     public void adicionarContribuicao(Contribuicao contribuicao) {
         this.contribuicoesLista.add(contribuicao);
+        contribuicao.setCliente(this);
         this.contribuicoes++;
     }
 
@@ -72,4 +65,11 @@ public class Cliente extends Usuario {
         System.out.println("Cliente excluído com sucesso!");
     }
 
+    public List<Contribuicao> getContribuicoesLista() {
+        return contribuicoesLista;
+    }
+
+    public void setContribuicoesLista(List<Contribuicao> contribuicoesLista) {
+        this.contribuicoesLista = contribuicoesLista;
+    }
 }
