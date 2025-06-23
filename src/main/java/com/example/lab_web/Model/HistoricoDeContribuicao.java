@@ -11,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class HistoricoDeContribuicao {
@@ -18,6 +19,9 @@ public class HistoricoDeContribuicao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cliente_id", referencedColumnName = "id", nullable = false)
     private Cliente cliente;
     
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
