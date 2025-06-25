@@ -8,25 +8,23 @@ import org.springframework.stereotype.Service;
 import com.example.lab_web.DTO.UnidadeDTO;
 import com.example.lab_web.Model.Status;
 import com.example.lab_web.Model.Unidade;
+import com.example.lab_web.Repository.HistoricoAtualizacaoRepository;
 
 @Service
-public class UnidadeFacadeService {
+public class UnidadeFacade {
 
     @Autowired
     private UnidadeService unidadeService;
 
     @Autowired
-    private HistoricoService historicoService;
+    private AvaliacaoService avaliacaoService;
 
-    @Autowired
-    private RankingService rankingService;
 
     public UnidadeDTO obterInformacoes(Long id) {
         Unidade unidade = unidadeService.buscar(id);
-        Status statusAtual = unidade.gerarStatusAtual();
-        List<String> comentarios = historicoService.buscarComentarios(id);
-        int ranking = rankingService.obterPontuacao(unidade);
+        Status statusAtual = unidadeService.buscarStatusUnidade(id);
+        List<String> comentarios = avaliacaoService.buscarComentariosPorIdUnidade(id);
 
-        return new UnidadeDTO(unidade, statusAtual, comentarios, ranking);
+        return new UnidadeDTO(unidade, statusAtual, comentarios);
     }
 }

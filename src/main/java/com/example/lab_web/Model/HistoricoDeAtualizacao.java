@@ -1,6 +1,5 @@
 package com.example.lab_web.Model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;

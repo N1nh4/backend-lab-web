@@ -9,12 +9,10 @@ public class UnidadeDTO {
     private Unidade unidade;
     private Status statusAtual;
     private List<String> comentarios;
-    private int ranking;
 
-    public UnidadeDTO(Unidade unidade, Status statusAtual, List<String> comentarios, int ranking) {
+    public UnidadeDTO(Unidade unidade, Status statusAtual, List<String> comentarios) {
         this.unidade = unidade;
         this.statusAtual = statusAtual;
         this.comentarios = comentarios;
-        this.ranking = ranking;
     }
 }

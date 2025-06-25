@@ -12,10 +12,6 @@ import jakarta.persistence.OneToOne;
 @Entity
 public class Administrador extends Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String cpf;
     private String endereco;
     private String telefone;
