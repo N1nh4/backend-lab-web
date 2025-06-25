@@ -76,5 +76,4 @@ public class UnidadeService {
                            " com confiabilidade " + novaAtualizacao.getConfiabilidade().name());
     }
 
-    // O método registrarStatusUnidadePorSistema foi removido conforme solicitado.
 }

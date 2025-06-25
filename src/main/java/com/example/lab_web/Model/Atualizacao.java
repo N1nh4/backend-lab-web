@@ -11,7 +11,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne; // Alterado para ManyToOne se um Usuario pode ter muitas Atualizacoes
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -33,7 +32,7 @@ public class Atualizacao {
     private Usuario usuario;
 
     public Atualizacao() {
-        this.dataHora = LocalDateTime.now(); // Inicializa a data/hora ao criar
+        this.dataHora = LocalDateTime.now(); 
     }
 
     public Atualizacao(Usuario usuario, Status status, NivelConfiabilidade confiabilidade) {
