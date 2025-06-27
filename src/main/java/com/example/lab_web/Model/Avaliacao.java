@@ -40,4 +40,8 @@ public class Avaliacao {
         System.out.println("Usuario: " + cliente.getNome());
         System.out.println("Nota: " + nota);
     }
+
+    public void buscarAvalicao() {
+        System.out.println("Nota 4.0");
+    }
 }
