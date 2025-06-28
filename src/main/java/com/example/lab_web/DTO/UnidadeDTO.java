@@ -20,9 +20,8 @@ public class UnidadeDTO {
     private String telefone; 
     private String imagemURL; 
     private Atualizacao ultimaAtualizacao; 
-    private Avaliacao avaliacao; 
    
-    public UnidadeDTO(Unidade unidade, InformacoesUnidade informacoesUnidade, Atualizacao ultimaAtualizacao, Avaliacao avaliacao, int nota) {
+    public UnidadeDTO(Unidade unidade, InformacoesUnidade informacoesUnidade, Atualizacao ultimaAtualizacao, int nota) {
         
         if (informacoesUnidade != null) {
             this.nome = informacoesUnidade.getNome();
@@ -48,8 +47,6 @@ public class UnidadeDTO {
         this.nota = nota;
 
         this.ultimaAtualizacao = ultimaAtualizacao;
-
-        this.avaliacao = avaliacao;
     }
 
     public UnidadeDTO(String nome, Status status, Endereco endereco, String telefone, String imagemURL, Atualizacao ultimaAtualizacao, Avaliacao avaliacao) {
@@ -59,6 +56,5 @@ public class UnidadeDTO {
         this.telefone = telefone;
         this.imagemURL = imagemURL;
         this.ultimaAtualizacao = ultimaAtualizacao;
-        this.avaliacao = avaliacao;
     }
 }

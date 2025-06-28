@@ -53,17 +53,10 @@ public class UnidadeService {
                 ultimaAtualizacao = historicoAtualizacao.getAtualizacoes().get(0);
             }
 
-            Avaliacao avaliacao = null;
-            if (informacoesUnidade != null) {
-                Optional<Avaliacao> avaliacaoOpt = avaliacaoRepository.buscarAvalicao(informacoesUnidade.getId());
-                avaliacao = avaliacaoOpt.orElse(null);
-               
-            }
-
             int n = informacoesUnidadeRepository.getNota(unidade.getId());
 
             // Crie e retorne o DTO
-            return new UnidadeDTO(unidade, informacoesUnidade, ultimaAtualizacao, avaliacao, n);
+            return new UnidadeDTO(unidade, informacoesUnidade, ultimaAtualizacao, n);
         }).collect(Collectors.toList());
     }
 }

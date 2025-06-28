@@ -21,7 +21,6 @@ public class Avaliacao {
 
     private int nota;
     
-    
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "cliente_id", referencedColumnName = "id", nullable = false)
     private Cliente cliente;
