@@ -12,6 +12,6 @@ import com.example.lab_web.Model.Avaliacao;
 @Repository
 public interface AvaliacaoRepository extends JpaRepository<Avaliacao, Long> {
     @Query("SELECT a FROM Avaliacao a WHERE a.id = :id")
-    Optional<Avaliacao> buscarAvalicao(@Param("nota") Long nota);
+    Optional<Avaliacao> buscarAvalicao(@Param("id") Long id);
     
 }
