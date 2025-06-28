@@ -14,6 +14,7 @@ import lombok.Setter;
 @Setter
 public class UnidadeDTO {
     private String nome;
+    private int nota;
     private Status status; 
     private Endereco endereco; 
     private String telefone; 
@@ -21,7 +22,7 @@ public class UnidadeDTO {
     private Atualizacao ultimaAtualizacao; 
     private Avaliacao avaliacao; 
    
-    public UnidadeDTO(Unidade unidade, InformacoesUnidade informacoesUnidade, Atualizacao ultimaAtualizacao, Avaliacao avaliacao) {
+    public UnidadeDTO(Unidade unidade, InformacoesUnidade informacoesUnidade, Atualizacao ultimaAtualizacao, Avaliacao avaliacao, int nota) {
         
         if (informacoesUnidade != null) {
             this.nome = informacoesUnidade.getNome();
@@ -43,6 +44,8 @@ public class UnidadeDTO {
         if (informacoesUnidade != null && informacoesUnidade.getEndereco() != null) {
             this.endereco = informacoesUnidade.getEndereco();
         }
+
+        this.nota = nota;
 
         this.ultimaAtualizacao = ultimaAtualizacao;
 

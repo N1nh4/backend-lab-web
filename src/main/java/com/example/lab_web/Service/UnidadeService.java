@@ -60,8 +60,10 @@ public class UnidadeService {
                
             }
 
+            int n = informacoesUnidadeRepository.getNota(unidade.getId());
+
             // Crie e retorne o DTO
-            return new UnidadeDTO(unidade, informacoesUnidade, ultimaAtualizacao, avaliacao);
+            return new UnidadeDTO(unidade, informacoesUnidade, ultimaAtualizacao, avaliacao, n);
         }).collect(Collectors.toList());
     }
 }
