@@ -27,6 +27,8 @@ public class Bairro {
     @JoinColumn(name = "cidade_id", referencedColumnName = "id", nullable = false)
     private Cidade cidade;
 
+    
+
     public Bairro() {}
     
     public Bairro(String nome, Cidade cidade) {

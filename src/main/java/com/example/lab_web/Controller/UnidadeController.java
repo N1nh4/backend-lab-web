@@ -12,8 +12,11 @@ import com.example.lab_web.Model.InformacoesUnidade;
 import com.example.lab_web.Model.Unidade;
 import com.example.lab_web.Service.UnidadeService;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 @RestController
 @RequestMapping("/unidades")
+@CrossOrigin(origins = "http://localhost:3000")
 public class UnidadeController {
 
     private UnidadeService us;

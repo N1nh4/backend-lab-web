@@ -29,14 +29,12 @@ public class InformacoesUnidade {
     @JoinColumn(name = "endereco_id", referencedColumnName = "id")
     private Endereco endereco;
     
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "avaliacao_id")
-    private List<Avaliacao> avaliacao;
+    private int nota;
     
     public InformacoesUnidade() {}
     
-    public InformacoesUnidade(List<Avaliacao> avaliacao, String nome, Endereco endereco, String telefone, String imagemURL) {
-        this.avaliacao = avaliacao;
+    public InformacoesUnidade(String nome, Endereco endereco, String telefone, String imagemURL, int nota) {
+        this.nota = nota;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
@@ -45,10 +43,9 @@ public class InformacoesUnidade {
     public void imprimirInformacoes() {
         System.out.println("Status: ");
         System.out.println("Avaliações: ");
-        for (Avaliacao avaliacao : avaliacao) {
-            avaliacao.imprimirAvaliacao();
-        }
     }
     
 
 }
+
+

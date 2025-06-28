@@ -15,7 +15,10 @@ public class Avaliacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String comentario;
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "comentario_id", referencedColumnName = "id", nullable = false)
+    private Comentario textoComentario;
+
     private int nota;
     
     
@@ -25,20 +28,20 @@ public class Avaliacao {
 
     public Avaliacao() {}
 
-    public Avaliacao(String comentario, Cliente cliente, int nota) {
-        this.comentario = comentario;
+    public Avaliacao(Comentario comentario, Cliente cliente, int nota) {
+        this.textoComentario = comentario;
         this.cliente = cliente;
         this.nota = nota;
     }
 
-    public void adicionarAvaliacao(String comentario) {
-        this.comentario = comentario;
+    public void adicionarAvaliacao(Comentario comentario) {
+        this.textoComentario = comentario;
     }
 
     public void imprimirAvaliacao() {
-        System.out.println("Comentario: " + comentario);
+        System.out.println("Comentario: " + this.textoComentario);
         System.out.println("Usuario: " + cliente.getNome());
-        System.out.println("Nota: " + nota);
+        System.out.println("Nota: " + this.nota);
     }
 
     public void buscarAvalicao() {

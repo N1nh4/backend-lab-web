@@ -24,10 +24,16 @@ public class Endereco {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "bairro_id", referencedColumnName = "id", nullable = false)
     private Bairro bairro;
+    private String rua;
+    private String numero;
+    private String cep;
 
     public Endereco() {}
     
-    public Endereco(Bairro bairro) {
+    public Endereco(Bairro bairro, String rua, String numero, String cep) {
         this.bairro = bairro;
+        this.rua = rua;
+        this.numero = numero;
+        this.cep = cep;
     }
 }
