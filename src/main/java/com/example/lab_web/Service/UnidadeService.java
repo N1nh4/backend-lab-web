@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.example.lab_web.DTO.UnidadeDTO;
+import com.example.lab_web.DTO.UnidadePaginaDTO;
 import com.example.lab_web.Model.Atualizacao;
 import com.example.lab_web.Model.Avaliacao;
 import com.example.lab_web.Model.HistoricoDeAtualizacao;
@@ -33,6 +34,12 @@ public class UnidadeService {
         this.historicoDeAtualizacaoRepository = historicoDeAtualizacaoRepository;
         this.avaliacaoRepository = avaliacaoRepository;
         this.atualizacaoRepository = atualizacaoRepository;
+    }
+
+    public UnidadePaginaDTO getUnidade(Long id) {
+        Unidade unidade = unidadeRepository.findById(id).orElse(null);
+        InformacoesUnidade informacoesUnidade = informacoesUnidadeRepository.buscarInformacoesUnidadePorIdUnidade(id);
+        return new UnidadePaginaDTO(unidade, informacoesUnidade);
     }
 
      public List<UnidadeDTO> getUnidades() {

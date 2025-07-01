@@ -8,7 +8,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,16 +25,11 @@ public class Unidade {
     
     @OneToOne(mappedBy = "unidade", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private HistoricoDeAtualizacao historicoDeAtualizacao;
-    
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "informacoes_unidade_id", referencedColumnName = "id")
-    private InformacoesUnidade informacoesUnidade;
 
     public Unidade() {} 
 
     public Unidade(String status, InformacoesUnidade informacoesUnidade, HistoricoDeAtualizacao historicoDeAtualizacao) {
         this.status = Status.valueOf(status);
-        this.informacoesUnidade = informacoesUnidade;
         this.historicoDeAtualizacao = historicoDeAtualizacao;
     }
 
