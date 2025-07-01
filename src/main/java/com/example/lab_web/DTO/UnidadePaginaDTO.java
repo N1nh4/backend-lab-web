@@ -1,5 +1,6 @@
 package com.example.lab_web.DTO;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.example.lab_web.Model.Comentario;
@@ -21,6 +22,7 @@ public class UnidadePaginaDTO {
     private String telefone; 
     private String imagemURL; 
     private List<Comentario> comentarios;
+    private LocalDateTime ultimaAtualizacao;
    
     public UnidadePaginaDTO(Unidade unidade, InformacoesUnidade informacoesUnidade) {
         
@@ -28,7 +30,8 @@ public class UnidadePaginaDTO {
             this.nome = informacoesUnidade.getNome();
             this.telefone = informacoesUnidade.getTelefone();
             this.imagemURL = informacoesUnidade.getImagemURL();
-            this.comentarios = informacoesUnidade.getComentarios(); 
+            this.comentarios = informacoesUnidade.getComentarios();
+            this.ultimaAtualizacao = informacoesUnidade.getUltimaAtualizacao();
         }
 
         if (unidade != null) {

@@ -13,8 +13,8 @@ INSERT INTO unidade (status) VALUES ('MUITO_CHEIO');
 INSERT INTO unidade (status) VALUES ('CHEIO');
 
 -- Passo 3: Inserir informações da unidade
-INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id) VALUES (2,'Unidade Salvador', '/imagem.png', '(71) 99999-9999', 1, 1);
-INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id) VALUES (5,'Unidade Brotas', 'https://via.placeholder.com/150', '(71) 99899-9777', 2, 2);
+INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (2,'Unidade Salvador', '/imagem.png', '(71) 99999-9999', 1, 1, now());
+INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (5,'Unidade Brotas', 'https://via.placeholder.com/150', '(71) 99899-9777', 2, 2, now());
 
 INSERT INTO ranking (id) VALUES (1);
 
@@ -25,3 +25,4 @@ INSERT INTO cliente (contribuicoes, id, ranking_id, cpf, endereco, telefone) VAL
 INSERT INTO comentario (cliente_id, data_hora, id, texto, informacoes_unidade_id) VALUES (1, '2023-10-01', 1, 'Ótimo atendimento!', 1);
 
 INSERT INTO avaliacao (nota, cliente_id, comentario_id, id) VALUES (5, 1, 1, 1);
+

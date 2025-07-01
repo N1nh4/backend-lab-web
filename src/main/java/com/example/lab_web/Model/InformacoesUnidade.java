@@ -1,5 +1,6 @@
 package com.example.lab_web.Model;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -35,6 +36,8 @@ public class InformacoesUnidade {
     @OneToOne
     @JoinColumn(name = "unidade_id",  nullable = false)
     private Unidade unidade;
+
+    private LocalDateTime ultimaAtualizacao;
     
     private int nota;
 
@@ -44,12 +47,13 @@ public class InformacoesUnidade {
     
     public InformacoesUnidade() {}
     
-    public InformacoesUnidade(String nome, Endereco endereco, String telefone, String imagemURL, int nota) {
+    public InformacoesUnidade(String nome, Endereco endereco, String telefone, String imagemURL, int nota, LocalDateTime ultimaAtualizacao) {
         this.nota = nota;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.imagemURL = imagemURL;
+        this.ultimaAtualizacao = ultimaAtualizacao;
     }
     public void imprimirInformacoes() {
         System.out.println("Status: ");
