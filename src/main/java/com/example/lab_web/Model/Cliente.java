@@ -32,7 +32,7 @@ public class Cliente extends Usuario {
     private List<Contribuicao> contribuicoesLista;
     
     public Cliente() {
-        
+        super();
     }
 
     public Cliente(String nome, String email, String senha, String dataNascimento, String cpf, String endereco, String telefone) {
