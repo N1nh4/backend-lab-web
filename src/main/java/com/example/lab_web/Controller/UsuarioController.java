@@ -1,5 +1,8 @@
 package com.example.lab_web.Controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,8 +23,10 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<?> criarConta(@RequestBody Cliente cliente) {
+    public ResponseEntity<Map<String, String>> criarConta(@RequestBody Cliente cliente) {
         us.criarConta(cliente);
-        return ResponseEntity.ok().build();
+        Map<String, String> resposta = new HashMap<>();
+        resposta.put("mensagem", "Conta criada com sucesso");
+        return ResponseEntity.ok(resposta);
     }
 }

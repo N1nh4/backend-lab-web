@@ -18,11 +18,11 @@ INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, u
 
 INSERT INTO ranking (id) VALUES (1);
 
-INSERT INTO usuario (id, email, nome, senha) VALUES (1, '6M1wN@example.com', 'Alana', '1234');
+/*INSERT INTO usuario (id, email, nome, senha) VALUES (1, '6M1wN@example.com', 'Alana', '1234');
 
 INSERT INTO cliente (contribuicoes, id, ranking_id, cpf, endereco, telefone) VALUES (0, 1, 1, '12345678901', 'Rua A, 123', '(71) 99999-9999');
 
 INSERT INTO comentario (cliente_id, data_hora, id, texto, informacoes_unidade_id) VALUES (1, '2023-10-01', 1, 'Ótimo atendimento!', 1);
 
-INSERT INTO avaliacao (nota, cliente_id, comentario_id, id) VALUES (5, 1, 1, 1);
+INSERT INTO avaliacao (nota, cliente_id, comentario_id, id) VALUES (5, 1, 1, 1);*/
 
