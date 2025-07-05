@@ -35,8 +35,12 @@ public class Cliente extends Usuario {
         super();
     }
 
+    public Cliente(String nome, String email, String senha) {
+        super(nome, email, senha);
+    }
+
     public Cliente(String nome, String email, String senha, String dataNascimento, String cpf, String endereco, String telefone) {
-        super(nome, email, senha, dataNascimento);
+        super(nome, email, senha);
         this.cpf = cpf;
         this.endereco = endereco;
         this.telefone = telefone;
@@ -52,7 +56,7 @@ public class Cliente extends Usuario {
     public void imprimirCliente() {
         System.out.println("Nome: " + getNome());
         System.out.println("Email: " + getEmail());
-        System.out.println("Data de Nascimento: " + getDataNascimento());
+        // System.out.println("Data de Nascimento: " + getDataNascimento());
         System.out.println("CPF: " + cpf);
         System.out.println("Endereco: " + endereco);
         System.out.println("Telefone: " + telefone);

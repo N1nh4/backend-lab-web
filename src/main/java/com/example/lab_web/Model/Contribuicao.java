@@ -18,7 +18,6 @@ public class Contribuicao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int contribuicoes; // Reavaliar o propósito deste campo se cada Contribuicao é um evento.
     private LocalDateTime dataHora; // Adicionado para alinhar com o método imprimirAtualizacao
 
     @Enumerated(EnumType.STRING)
@@ -35,7 +34,6 @@ public class Contribuicao {
     public Contribuicao(Status status, Cliente cliente) {
         this.dataHora = LocalDateTime.now();
         this.status = status;
-        this.contribuicoes = 0; // Se este é um contador dentro da Contribuicao.
         this.cliente = cliente;
     }
 
@@ -45,14 +43,6 @@ public class Contribuicao {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public int getContribuicoes() {
-        return contribuicoes;
-    }
-
-    public void setContribuicoes(int contribuicoes) {
-        this.contribuicoes = contribuicoes;
     }
 
     public LocalDateTime getDataHora() {
@@ -79,12 +69,7 @@ public class Contribuicao {
         this.cliente = cliente;
     }
 
-    public void adicionarContribuicao() {
-        this.contribuicoes++;
-    }
-
     public void VisualizarContribuicao() {
-        System.out.println("Total de Contribuições: " + contribuicoes);
         System.out.println("Status: " + status);
     }
 
@@ -101,6 +86,5 @@ public class Contribuicao {
             System.out.println("Cliente: Não associado");
         }
         System.out.println("Status: " + status);
-        System.out.println("Valor/Pontos de Contribuição: " + contribuicoes); // Se 'contribuicoes' for um valor
     }
 }

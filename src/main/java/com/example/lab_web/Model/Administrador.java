@@ -19,7 +19,7 @@ public class Administrador extends Usuario {
     public Administrador() {}
 
     public Administrador(String nome, String email, String senha, String dataNascimento, String cpf, String endereco, String telefone) {
-        super(nome, email, senha, dataNascimento);
+        // super(nome, email, senha, dataNascimento);
         this.cpf = cpf;
         this.endereco = endereco;
         this.telefone = telefone;

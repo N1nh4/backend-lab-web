@@ -18,15 +18,13 @@ public abstract class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private String dataNascimento;
 
     public Usuario() {}
 
-    public Usuario(String nome, String email, String senha, String dataNascimento) {
+    public Usuario(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.dataNascimento = dataNascimento;
     }
 
     public String getNome() {
@@ -37,15 +35,15 @@ public abstract class Usuario {
         return email;
     }
 
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
+    //public String getDataNascimento() {
+    //    return dataNascimento;
+    //}
 
 
     public void imprimirUsuario() {
         System.out.println("Nome: " + nome);
         System.out.println("Email: " + email);
-        System.out.println("Data de Nascimento: " + dataNascimento);
+    //    System.out.println("Data de Nascimento: " + dataNascimento);
     }
 
     public void login() {
