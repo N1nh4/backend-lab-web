@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.lab_web.Model.Cliente;
+import com.example.lab_web.Service.EmailService;
 import com.example.lab_web.Service.UsuarioService;
 
 @RestController
@@ -17,9 +18,11 @@ import com.example.lab_web.Service.UsuarioService;
 public class UsuarioController {
 
     private UsuarioService us;
+    private EmailService es;
     
-    public UsuarioController(UsuarioService us) {
+    public UsuarioController(UsuarioService us, EmailService es) {
         this.us = us;
+        this.es = es;
     }
 
     @PostMapping
@@ -27,6 +30,8 @@ public class UsuarioController {
         us.criarConta(cliente);
         Map<String, String> resposta = new HashMap<>();
         resposta.put("mensagem", "Conta criada com sucesso");
+
+        es.enviarEmail(cliente.getEmail(), cliente.getNome());
         return ResponseEntity.ok(resposta);
     }
 }
