@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.lab_web.DTO.UnidadeDTO;
 import com.example.lab_web.DTO.UnidadePaginaDTO;
 import com.example.lab_web.Model.Atualizacao;
+import com.example.lab_web.Service.ClienteService;
 import com.example.lab_web.Service.UnidadeService;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,9 +25,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public class UnidadeController {
 
     private UnidadeService us;
+    private ClienteService cs;
 
-    public UnidadeController(UnidadeService us) {
+    public UnidadeController(UnidadeService us, ClienteService cs) {
         this.us = us;
+        this.cs = cs;
 
     }
 
@@ -46,6 +49,7 @@ public class UnidadeController {
     public ResponseEntity<String> registrarLotacao(@RequestBody AtualizacaoDTO atualizacaoCliente, @PathVariable Long id) {
         System.out.println("Funcionando");
         System.out.println(atualizacaoCliente);
+        cs.incrementarContribuicao((long)atualizacaoCliente.getIdUsuario());
         return ResponseEntity.status(HttpStatus.CREATED).body("Avaliação salva!");
     }
 }

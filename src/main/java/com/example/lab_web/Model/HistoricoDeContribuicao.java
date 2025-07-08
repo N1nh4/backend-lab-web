@@ -25,8 +25,7 @@ public class HistoricoDeContribuicao {
     private Cliente cliente;
     
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "contribuicao_id")
-    
+    @JoinColumn(name = "contribuicao_lista_id")
     private List<Contribuicao> contribuicoes;
 
     public HistoricoDeContribuicao() {

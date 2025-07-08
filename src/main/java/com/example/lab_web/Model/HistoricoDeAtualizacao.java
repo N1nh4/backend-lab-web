@@ -23,7 +23,7 @@ public class HistoricoDeAtualizacao {
     private Long id;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "contribuicao_id")
+    @JoinColumn(name = "atualizacao_id")
     private List<Atualizacao> atualizacoes;
     
     @OneToOne()

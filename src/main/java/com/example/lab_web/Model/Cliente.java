@@ -31,10 +31,6 @@ public class Cliente extends Usuario {
     private String telefone;
     private int contribuicoes;
     
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "contribuicao_id")
-    private List<Contribuicao> contribuicoesLista;
-    
     public Cliente() {
         super();
     }
@@ -49,8 +45,6 @@ public class Cliente extends Usuario {
         this.endereco = endereco;
         this.telefone = telefone;
         this.contribuicoes = 0; 
-        this.contribuicoesLista = new ArrayList<>();
-        
     }
 
     public int getContribuicoes() {
@@ -64,11 +58,6 @@ public class Cliente extends Usuario {
         System.out.println("CPF: " + cpf);
         System.out.println("Endereco: " + endereco);
         System.out.println("Telefone: " + telefone);
-    }
-
-    public void adicionarContribuicao(Contribuicao contribuicao) {
-        this.contribuicoesLista.add(contribuicao);
-        this.contribuicoes++;
     }
 
     public void cadastrarCliente() {
