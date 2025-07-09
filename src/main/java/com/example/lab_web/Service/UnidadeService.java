@@ -68,7 +68,7 @@ public class UnidadeService {
 
         int valorMedio = Math.round((float) somaPonderada / somaPesos);
 
-        valorMedio = Math.min(4, Math.max(1, valorMedio));
+        valorMedio = Math.min(5, Math.max(1, valorMedio));
 
         Status novoStatus = Status.fromValorNumerico(valorMedio);
         unidade.setStatus(novoStatus);
