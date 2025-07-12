@@ -13,16 +13,16 @@ INSERT INTO unidade (status) VALUES ('SEM_INFORMACAO');
 INSERT INTO unidade (status) VALUES ('SEM_INFORMACAO');
 
 -- Passo 3: Inserir informações da unidade
-INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (2,'Unidade Salvador', '/imagem.png', '(71) 99999-9999', 1, 1, now());
-INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (5,'Unidade Brotas', 'https://via.placeholder.com/150', '(71) 99899-9777', 2, 2, now());
+INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (2,'Unidade Salvador', 'https://midias.correio24horas.com.br/2023/03/09/-1153319.jpg', '(71) 99999-9999', 1, 1, now());
+INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (5,'Unidade Brotas', 'https://midias.correio24horas.com.br/2023/03/09/-1153319.jpg', '(71) 99899-9777', 2, 2, now());
 
 INSERT INTO ranking (id) VALUES (1);
 
-INSERT INTO usuario (id, email, nome, senha) VALUES (1, '6M1wN@example.com', 'Alana', '1234');
+INSERT INTO usuario ( email, nome, senha) VALUES ( '6M1wN@example.com', 'Alana', '1234');
 
 INSERT INTO cliente (contribuicoes, id, ranking_id, cpf, endereco, telefone) VALUES (0, 1, 1, '12345678901', 'Rua A, 123', '(71) 99999-9999');
 
-INSERT INTO usuario (id, email, nome, senha) VALUES (2, '7M1wN@example.com', 'Rafael', '12345');
+INSERT INTO usuario ( email, nome, senha) VALUES ( '7M1wN@example.com', 'Rafael', '12345');
 
 INSERT INTO funcionario (id, cpf, endereco, telefone) VALUES (2, '12345678901', 'Rua A, 123', '(71) 99999-9999');
 

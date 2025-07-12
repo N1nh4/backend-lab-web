@@ -7,15 +7,13 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import com.example.lab_web.Model.Cliente;
+import com.example.lab_web.Model.Funcionario;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
 
-    @Modifying
-    @Query("UPDATE Cliente c SET c.contribuicoes = c.contribuicoes + 1 WHERE c.id = :id")
-    void incrementarContribuicao(@Param("id") Long id);
+    Optional<Funcionario> findByEmail(String email);
 
-    Optional<Cliente> findByEmail(String email);
 }

@@ -36,9 +36,13 @@ public class AtualizacaoController {
     // Endpoint POST para criar atualização e recalcular status da unidade
     @PostMapping
     public ResponseEntity<AtualizacaoResponseDTO> criarAtualizacao(@RequestBody AtualizacaoRequestDTO dto) {
+
+        System.out.println("Recebido no backend: status=" + dto.getStatus() + ", usuarioId=" + dto.getUsuarioId() + ", unidadeId=" + dto.getUnidadeId());
         // Buscar usuário e unidade no banco
         Usuario usuario = usuarioRepository.findById(dto.getUsuarioId())
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        System.out.println("USUARIO ID" + usuario.getId());
 
         Unidade unidade = unidadeRepository.findById(dto.getUnidadeId())
                 .orElseThrow(() -> new RuntimeException("Unidade não encontrada"));
@@ -55,6 +59,8 @@ public class AtualizacaoController {
 
         // Preparar DTO de resposta com atualização e status atualizado da unidade
         AtualizacaoResponseDTO response = new AtualizacaoResponseDTO(atualizacao, unidadeAtualizada.getStatus());
+
+        System.out.println("Resposta criada no backend: " + response.getStatusUnidadeAtualizado());
 
         return ResponseEntity.ok(response);
     }
