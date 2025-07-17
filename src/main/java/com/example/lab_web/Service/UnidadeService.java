@@ -75,6 +75,8 @@ public class UnidadeService {
 
         unidadeRepository.save(unidade);
 
+        System.out.println("VALOR MEDIA: " + valorMedio);
+
     }
 
     private int getPesoPorConfiabilidade(int confiabilidade) {
@@ -83,13 +85,14 @@ public class UnidadeService {
         }
         return 1;
     }
+
     public UnidadePaginaDTO getUnidade(Long id) {
         Unidade unidade = unidadeRepository.findById(id).orElse(null);
         InformacoesUnidade informacoesUnidade = informacoesUnidadeRepository.buscarInformacoesUnidadePorIdUnidade(id);
         return new UnidadePaginaDTO(unidade, informacoesUnidade);
     }
 
-     public List<UnidadeDTO> getUnidades() {
+    public List<UnidadeDTO> getUnidades() {
         List<Unidade> unidades = unidadeRepository.findAll();
 
         return unidades.stream().map(unidade -> {

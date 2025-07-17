@@ -38,7 +38,6 @@ public class UsuarioController {
         Map<String, String> resposta = new HashMap<>();
         resposta.put("mensagem", "Conta criada com sucesso");
 
-        es.enviarEmail(cliente.getEmail(), cliente.getNome());
         return ResponseEntity.ok(resposta);
     }
 
