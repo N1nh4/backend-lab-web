@@ -13,8 +13,8 @@ INSERT INTO unidade (status) VALUES ('SEM_INFORMACAO');
 INSERT INTO unidade (status) VALUES ('SEM_INFORMACAO');
 
 -- Passo 3: Inserir informações da unidade
-INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (2,'Unidade Salvador', 'https://midias.correio24horas.com.br/2023/03/09/-1153319.jpg', '(71) 99999-9999', 1, 1, now());
-INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (5,'Unidade Brotas', 'https://midias.correio24horas.com.br/2023/03/09/-1153319.jpg', '(71) 99899-9777', 2, 2, now());
+INSERT INTO informacoes_unidade (nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (2,'Unidade Salvador', 'https://midias.correio24horas.com.br/2023/03/09/-1153319.jpg', -12.95, -38.45, '(71) 99999-9999', 1, 1, now());
+INSERT INTO informacoes_unidade (nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (5,'Unidade Brotas', 'https://midias.correio24horas.com.br/2023/03/09/-1153319.jpg', -12.97, -38.50, '(71) 99899-9777', 2, 2, now());
 
 INSERT INTO ranking (id) VALUES (1);
 

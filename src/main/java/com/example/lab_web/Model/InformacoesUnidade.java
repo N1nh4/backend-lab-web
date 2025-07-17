@@ -28,6 +28,9 @@ public class InformacoesUnidade {
     private String nome;
     private String telefone;
     private String imagemURL;
+
+    private Double lat;
+    private Double lng;
     
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "endereco_id", referencedColumnName = "id")
@@ -47,12 +50,14 @@ public class InformacoesUnidade {
     
     public InformacoesUnidade() {}
     
-    public InformacoesUnidade(String nome, Endereco endereco, String telefone, String imagemURL, int nota, LocalDateTime ultimaAtualizacao) {
+    public InformacoesUnidade(String nome, Endereco endereco, String telefone, String imagemURL, Double lat, Double lng, int nota, LocalDateTime ultimaAtualizacao) {
         this.nota = nota;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.imagemURL = imagemURL;
+        this.lat = lat;
+        this.lng = lng;
         this.ultimaAtualizacao = ultimaAtualizacao;
     }
     public void imprimirInformacoes() {
