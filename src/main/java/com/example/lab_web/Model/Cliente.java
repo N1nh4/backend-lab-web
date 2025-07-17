@@ -60,6 +60,11 @@ public class Cliente extends Usuario {
         System.out.println("Telefone: " + telefone);
     }
 
+
+    public void incrementarContribuicoes() {
+        this.contribuicoes++;
+    }
+
     public void cadastrarCliente() {
         System.out.println("Cliente cadastrado com sucesso!");
     }

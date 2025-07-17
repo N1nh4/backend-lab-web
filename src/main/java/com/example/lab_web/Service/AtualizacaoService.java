@@ -10,6 +10,7 @@ import com.example.lab_web.DTO.EmailDTO;
 import com.example.lab_web.Factory.AtualizacaoFactory;
 import com.example.lab_web.Factory.AtualizacaoFactoryResolver;
 import com.example.lab_web.Model.Atualizacao;
+import com.example.lab_web.Model.Cliente;
 import com.example.lab_web.Model.ListaEmailsNotificacao;
 import com.example.lab_web.Model.Status;
 import com.example.lab_web.Model.Unidade;
@@ -17,6 +18,7 @@ import com.example.lab_web.Model.Usuario;
 import com.example.lab_web.Repository.AtualizacaoRepository;
 import com.example.lab_web.Repository.ListaEmailsRepository;
 import com.example.lab_web.Repository.UnidadeRepository;
+import com.example.lab_web.Repository.UsuarioRepository;
 
 @Service
 public class AtualizacaoService {
@@ -39,11 +41,22 @@ public class AtualizacaoService {
     @Autowired
     private UnidadeService unidadeService; 
 
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
     public Atualizacao registrar(Status status, Usuario usuario, Unidade unidade) {
         AtualizacaoFactory factory = factoryResolver.resolveFactory(usuario);
         Atualizacao atualizacao = factory.criarAtualizacao(status, usuario, unidade);
         
         atualizacaoRepository.save(atualizacao);
+
+        // Incrementa contribuição se for cliente
+        if (usuario instanceof Cliente) {
+            Cliente cliente = (Cliente) usuario;
+            cliente.incrementarContribuicoes();  
+            usuarioRepository.save(cliente);    
+        }
+
 
         // Atualiza o status da unidade com base nas últimas 2h
         unidadeService.gerarStatusAtual(unidade.getId());

@@ -18,11 +18,11 @@ INSERT INTO informacoes_unidade (nota, nome, imagemURL, telefone, endereco_id, u
 
 INSERT INTO ranking (id) VALUES (1);
 
-INSERT INTO usuario ( email, nome, senha) VALUES ( '6M1wN@example.com', 'Alana', '1234');
+INSERT INTO usuario ( email, nome, senha) VALUES ( 'alana@gmail.com', 'Alana', '1234');
 
 INSERT INTO cliente (contribuicoes, id, ranking_id, cpf, endereco, telefone) VALUES (0, 1, 1, '12345678901', 'Rua A, 123', '(71) 99999-9999');
 
-INSERT INTO usuario ( email, nome, senha) VALUES ( '7M1wN@example.com', 'Rafael', '12345');
+INSERT INTO usuario ( email, nome, senha) VALUES ( 'rafael@gmail.com', 'Rafael', '12345');
 
 INSERT INTO funcionario (id, cpf, endereco, telefone) VALUES (2, '12345678901', 'Rua A, 123', '(71) 99999-9999');
 
