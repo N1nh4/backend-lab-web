@@ -76,10 +76,12 @@ public class AtualizacaoService {
 
             if (u.get().getStatus() == Status.VAZIO) {
                 System.out.println("STATUS VAZIO E ENTROU PARA ENVIAR EMAIL");
-                List<ListaEmailsNotificacao> emails = ler.findAll();
-
-                es.enviarEmail(emails);
-                
+                try {
+                    List<ListaEmailsNotificacao> emails = ler.findAll();
+                    es.enviarEmail(emails);
+                } catch (Exception e) {
+                    System.err.println("Erro ao enviar email (não crítico): " + e.getMessage());
+                }
             }
         }
 
