@@ -1,6 +1,6 @@
 -- Passo 1: Criar endereço relacionado
 INSERT INTO estado (id, nome) VALUES (1, 'Bahia');
-INSERT INTO cidade (id, nome, estado_id) VALUES (1, 'Salvador', 1); 
+INSERT INTO cidade (id, nome, estado_id) VALUES (1, 'Salvador', 1);
 
 INSERT INTO bairro (id, nome, cidade_id) VALUES (1, 'Centro', 1);
 INSERT INTO bairro (id, nome, cidade_id) VALUES (2, 'Brotas', 1);
@@ -15,8 +15,53 @@ INSERT INTO bairro (id, nome, cidade_id) VALUES (10, 'Rio Vermelho', 1);
 INSERT INTO bairro (id, nome, cidade_id) VALUES (11, 'Patamares', 1);
 INSERT INTO bairro (id, nome, cidade_id) VALUES (12, 'Boca do Rio', 1);
 
+INSERT INTO bairro (id, nome, cidade_id) VALUES (13, 'Baixa dos Sapateiros', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (14, 'Arenoso', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (15, 'Cabula', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (16, 'Canabrava', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (17, 'Castelo Branco', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (18, 'Centenario', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (19, 'Calabetao', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (20, 'Engomadeira', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (21, 'Mata Escura', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (22, 'Paripe', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (23, 'Bariri', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (24, 'Pernambues', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (25, 'Boca do Rio', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (26, 'Bairro da Paz', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (27, 'Barbalho', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (28, 'Faz Grande do Retiro', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (29, 'Castelo Branco 2', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (30, 'Engenho Velho da Federacao', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (31, 'Saboeiro', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (32, 'Valeria', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (33, 'Cosme de Farias', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (34, 'Brotas', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (35, 'Marechal Rondon', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (36, 'Pau Miudo', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (37, 'Massaranduba', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (38, 'Aguas Claras', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (39, 'Santa Cruz', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (40, 'Periperi', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (41, 'Pau da Lima', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (42, 'Liberdade', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (43, 'Vale das Pedrinhas', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (44, 'Itapoan', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (45, 'Sete Portas', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (46, 'Campo da Polvora', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (47, 'Tancredo Neves', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (48, 'Santo Antonio', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (49, 'Santo Inacio', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (50, 'Sao Cristovao', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (51, 'Federacao', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (52, 'Sete de Abril', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (53, 'Vale dos Lagos', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (54, 'Rio Vermelho', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (55, 'Bonfim', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (56, 'Pernambues 2', 1);
+INSERT INTO bairro (id, nome, cidade_id) VALUES (57, 'Pau Miudo 2', 1);
 
-
+-- Enderecos (12 originais + 46 novos)
 INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (1, 1, '40000-000', '123', 'Rua A');
 INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (2, 2, '40000-001', '456', 'Rua B');
 INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (3, 3, '40000-002', '789', 'Rua C');
@@ -29,24 +74,114 @@ INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (9, 9, '40000-006'
 INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (10, 10, '40000-007', '444', 'Rua K');
 INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (11, 11, '40000-008', '555', 'Rua L');
 INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (12, 12, '40000-009', '666', 'Rua M');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (13, 13, '40020-286', '147', 'AVENIDA JJ SEABRA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (14, 14, '41211-405', '100', 'RUA DIRETA DO ARENOSO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (15, 15, '41195-240', 'S/N', 'ESTRADA DAS BARREIRAS');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (16, 16, '41260-340', 'S/N', 'RUA BEM TE VI');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (17, 17, '41320-010', 'S/N', 'RUA A 3 ETAPA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (18, 18, '40100-180', 'S/N', 'AV CENTENARIO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (19, 19, '41227-050', 'S/N', 'RUA CLERISTON ANDRADE');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (20, 20, '41200-510', 'S/N', 'RUA DIRETA DA ENGOMADEIRA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (21, 21, '40010-010', 'S/N', 'RUA JARDIM PAMPULHA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (22, 22, '40800-460', 'S/N', 'RUA ALMIRANTE BARROSO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (23, 23, '40715-700', 'S/N', 'PRACA DO BARIRI');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (24, 24, '41130-000', '150', 'RUA TOMAZ GONZAGA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (25, 25, '41710-450', '8', 'RUA MANOEL QUARESMA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (26, 26, '41515-235', 'S/N', 'RUA TANCREDO NEVES');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (27, 27, '40301-150', '4', 'RUA PROF ARTUR MENDES DE AGUIAR');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (28, 28, '40353-150', '32', 'RUA DAS PITANGUEIRAS');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (29, 29, '41320-100', 'S/N', 'RUA GENARO DE CARVALHO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (30, 30, '40750-260', '201', 'RUA APOLINARIO SANTANA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (31, 31, '41180-780', 'S/N', 'RUA JURUCUTUS');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (32, 32, '41300-600', 'S/N', 'RUA DA MATRIZ');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (33, 33, '40050-002', 'S/N', 'RUA DIRETA DE COSME DE FARIAS');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (34, 34, '40285-000', '450', 'AV D JOAO VI');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (35, 35, '41280-119', 'S/N', 'RUA VICENTE CELESTINO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (36, 36, '40310-000', 'S/N', 'RUA MARQUES DE MARICA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (37, 37, '40435-000', 'S/N', 'RUA LOPES TROVAO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (38, 38, '41310-380', 'S/N', 'RUA ENDEO NASCIMENTO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (39, 39, '41925-300', 'S/N', 'RUA DR ARMANDO COLAVOLPE');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (40, 40, '40720-130', 'S/N', 'RUA DOM PEDRO II');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (41, 56, '41110-200', 'S/N', 'RUA TOMAZ GONZAGA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (42, 41, '40080-002', 'S/N', 'RUA JAIME VIEIRA LIMA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (43, 42, '40375-017', '217', 'RUA LIMA E SILVA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (44, 43, '41905-615', 'S/N', 'AVENIDA VALE DAS PEDRINHAS');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (45, 44, '41635-152', 'S/N', 'AV DORIVAL CAYME');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (46, 45, '40300-305', 'S/N', 'RUA FORTUNATO BENJAMIN SABACK');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (47, 46, '40040-280', '8', 'PRACA D PEDRO II');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (48, 47, '41205-140', 'S/N', 'RUA PERNAMBUCO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (49, 48, '40301-460', '238', 'PRACA DOS 15 MISTERIOS');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (50, 49, '41231-310', 'S/N', 'RUA DIRETA DO SANTO INACIO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (51, 50, '41500-260', '2', 'RUA ALTO DA BOA VISTA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (52, 51, '40231-250', 'S/N', 'AVENIDA CARDEAL DA SILVA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (53, 57, '40310-300', 'S/N', 'RUA PROFESSOR SUEIRO');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (54, 22, '40800-003', 'S/N', 'AVENIDA CARIOCA DE PARIPE');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (55, 52, '41385-740', 'S/N', 'RUA DA FELICIA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (56, 53, '41250-190', 'S/N', 'RUA ESTRADA DAS MURICOCAS');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (57, 54, '40170-010', '4015', 'AVENIDA OCEANICA');
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES (58, 55, '40415-060', 'S/N', 'RUA DUARTE DA COSTA');
 
+-- Unidades
+INSERT INTO unidade (id, status) VALUES (1, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (2, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (3, 'POUCO_VAZIO');
+INSERT INTO unidade (id, status) VALUES (4, 'MODERADO');
+INSERT INTO unidade (id, status) VALUES (5, 'MUITO_CHEIO');
+INSERT INTO unidade (id, status) VALUES (6, 'CHEIO');
+INSERT INTO unidade (id, status) VALUES (7, 'MUITO_CHEIO');
+INSERT INTO unidade (id, status) VALUES (8, 'MUITO_CHEIO');
+INSERT INTO unidade (id, status) VALUES (9, 'POUCO_VAZIO');
+INSERT INTO unidade (id, status) VALUES (10, 'MODERADO');
+INSERT INTO unidade (id, status) VALUES (11, 'POUCO_VAZIO');
+INSERT INTO unidade (id, status) VALUES (12, 'VAZIO');
+INSERT INTO unidade (id, status) VALUES (13, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (14, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (15, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (16, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (17, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (18, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (19, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (20, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (21, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (22, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (23, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (24, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (25, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (26, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (27, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (28, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (29, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (30, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (31, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (32, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (33, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (34, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (35, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (36, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (37, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (38, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (39, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (40, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (41, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (42, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (43, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (44, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (45, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (46, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (47, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (48, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (49, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (50, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (51, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (52, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (53, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (54, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (55, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (56, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (57, 'SEM_INFORMACAO');
+INSERT INTO unidade (id, status) VALUES (58, 'SEM_INFORMACAO');
 
--- Passo 2: Criar unidades com FK funcionando
-INSERT INTO unidade (status) VALUES ('SEM_INFORMACAO');
-INSERT INTO unidade (status) VALUES ('SEM_INFORMACAO');
-INSERT INTO unidade (status) VALUES ('POUCO_VAZIO');
-INSERT INTO unidade (status) VALUES ('MODERADO');
-INSERT INTO unidade (status) VALUES ('MUITO_CHEIO');
-INSERT INTO unidade (status) VALUES ('CHEIO');
-INSERT INTO unidade (status) VALUES ('MUITO_CHEIO');
-INSERT INTO unidade (status) VALUES ('MUITO_CHEIO');
-INSERT INTO unidade (status) VALUES ('POUCO_VAZIO');
-INSERT INTO unidade (status) VALUES ('MODERADO');
-INSERT INTO unidade (status) VALUES ('POUCO_VAZIO');
-INSERT INTO unidade (status) VALUES ('VAZIO');
-
-
--- Passo 3: Inserir informações da unidade
+-- Informacoes das Unidades (12 originais)
 INSERT INTO informacoes_unidade (nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (2,'Unidade Salvador', 'https://midias.correio24horas.com.br/2023/03/09/-1153319.jpg', -12.95, -38.45, '(71) 99999-9999', 1, 1, now());
 INSERT INTO informacoes_unidade (nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (5,'Unidade Brotas', 'https://midias.correio24horas.com.br/2023/03/09/-1153319.jpg', -12.97, -38.50, '(71) 99899-9777', 2, 2, now());
 INSERT INTO informacoes_unidade (nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (4,'Unidade Itaigara', 'https://s3saude.org.br/wp-content/uploads/2025/06/img_974FDB696CD079D8822731280A6CC9F0C7A3CC53_420x870-1-960x720.jpeg', -12.99, -38.47, '(71) 98765-4321', 3, 3, now());
@@ -60,19 +195,67 @@ INSERT INTO informacoes_unidade (nota, nome, imagemURL, lat, lng, telefone, ende
 INSERT INTO informacoes_unidade (nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (4,'Unidade Patamares', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGxwYR5d-LfFI1R-ZBVNpbrt9f0m7PSgPcHQ&s', -12.96, -38.39, '(71) 99222-2222', 11, 11, now());
 INSERT INTO informacoes_unidade (nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (3,'Unidade Boca do Rio', 'https://midias.correio24horas.com.br/2023/03/09/-1153319.jpg', -12.97, -38.42, '(71) 99111-1111', 12, 12, now());
 
+-- Informacoes das Unidades (46 novas UBS)
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (13, 0, 'UBS 19o CENTRO DE SAUDE PELOURINHO', NULL, -12.9716, -38.4816, '(71) 3015-0013', 13, 13, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (14, 0, 'UBS ARENOSO', NULL, -12.9513, -38.4395, '(71) 3015-0014', 14, 14, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (15, 0, 'UBS BARREIRAS', NULL, -12.9430, -38.4564, '(71) 3015-0015', 15, 15, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (16, 0, 'UBS CANABRAVA', NULL, -12.9320, -38.4520, '(71) 3015-0016', 16, 16, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (17, 0, 'UBS CASTELO BRANCO', NULL, -12.9530, -38.4580, '(71) 3015-0017', 17, 17, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (18, 0, 'UBS CLEMENTINO FRAGA', NULL, -12.9730, -38.5110, '(71) 3015-0018', 18, 18, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (19, 0, 'UBS DE CALABETAO', NULL, -12.9380, -38.4520, '(71) 3015-0019', 19, 19, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (20, 0, 'UBS DE ENGOMADEIRA', NULL, -12.9500, -38.4605, '(71) 3015-0020', 20, 20, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (21, 0, 'UBS DE MATA ESCURA', NULL, -12.9372, -38.4612, '(71) 3015-0021', 21, 21, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (22, 0, 'UBS DE PARIPE', NULL, -12.8416, -38.4648, '(71) 3015-0022', 22, 22, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (23, 0, 'UBS DO BARIRI', NULL, -12.9650, -38.4900, '(71) 3015-0023', 23, 23, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (24, 0, 'UBS DO CSU PERNAMBUES', NULL, -12.9703, -38.4614, '(71) 3015-0024', 24, 24, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (25, 0, 'UBS DR CESAR DE ARAUJO', NULL, -12.9791, -38.4330, '(71) 3015-0025', 25, 25, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (26, 0, 'UBS DR ORLANDO IMBASSAHY', NULL, -12.9710, -38.5110, '(71) 3015-0026', 26, 26, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (27, 0, 'UBS DR PERICLES ESTEVES CARDOSO - BARBALHO', NULL, -12.9660, -38.5060, '(71) 3015-0027', 27, 27, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (28, 0, 'UBS DR PERICLES LARANJEIRAS', NULL, -12.9560, -38.4760, '(71) 3015-0028', 28, 28, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (29, 0, 'UBS DRA CECY DE ANDRADE', NULL, -12.9540, -38.4600, '(71) 3015-0029', 29, 29, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (30, 0, 'UBS ENGENHO VELHO DA FEDERACAO', NULL, -12.9620, -38.4980, '(71) 3015-0030', 30, 30, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (31, 0, 'UBS EUNISIO COELHO TEIXEIRA', NULL, -12.9480, -38.4570, '(71) 3015-0031', 31, 31, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (32, 0, 'UBS FREI BENJAMIM VALERIA', NULL, -12.9310, -38.4540, '(71) 3015-0032', 32, 32, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (33, 0, 'UBS MAJOR COSME DE FARIAS', NULL, -12.9640, -38.5020, '(71) 3015-0033', 33, 33, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (34, 0, 'UBS MANOEL VITORINO', NULL, -12.9680, -38.5020, '(71) 3015-0034', 34, 34, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (35, 0, 'UBS MARECHAL RONDON', NULL, -12.9510, -38.4590, '(71) 3015-0035', 35, 35, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (36, 0, 'UBS MARIA DA CONCEICAO SANTIAGO IMBASSAY', NULL, -12.9620, -38.4970, '(71) 3015-0036', 36, 36, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (37, 0, 'UBS MINISTRO ALKIMIN', NULL, -12.9480, -38.4530, '(71) 3015-0037', 37, 37, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (38, 0, 'UBS NELSON PIAUHY DOURADO', NULL, -12.9530, -38.4460, '(71) 3015-0038', 38, 38, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (39, 0, 'UBS OSVALDO CALDAS CAMPOS - SANTA CRUZ', NULL, -12.9650, -38.5050, '(71) 3015-0039', 39, 39, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (40, 0, 'UBS PERIPERI', NULL, -12.9560, -38.4710, '(71) 3015-0040', 40, 40, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (41, 0, 'UBS PERNAMBUES EDSON T BARBOSA', NULL, -12.9700, -38.4610, '(71) 3015-0041', 41, 41, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (42, 0, 'UBS PIRES DA VEIGA', NULL, -12.9830, -38.4750, '(71) 3015-0042', 42, 42, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (43, 0, 'UBS PROF BEZERRA LOPES', NULL, -12.9730, -38.5020, '(71) 3015-0043', 43, 43, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (44, 0, 'UBS PROF EDUARDO ARAUJO', NULL, -12.9620, -38.4980, '(71) 3015-0044', 44, 44, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (45, 0, 'UBS PROF JOSE MARIANE', NULL, -12.9340, -38.4400, '(71) 3015-0045', 45, 45, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (46, 0, 'UBS PROF MARIO ANDREA', NULL, -12.9670, -38.5040, '(71) 3015-0046', 46, 46, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (47, 0, 'UBS RAMIRO DE AZEVEDO', NULL, -12.9791, -38.5085, '(71) 3015-0047', 47, 47, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (48, 0, 'UBS RODRIGO ARGOLO', NULL, -12.9440, -38.4580, '(71) 3015-0048', 48, 48, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (49, 0, 'UBS SANTO ANTONIO', NULL, -12.9710, -38.5090, '(71) 3015-0049', 49, 49, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (50, 0, 'UBS SANTO INACIO', NULL, -12.9326, -38.4620, '(71) 3015-0050', 50, 50, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (51, 0, 'UBS SAO CRISTOVAO', NULL, -12.9091, -38.3536, '(71) 3015-0051', 51, 51, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (52, 0, 'UBS SAO GONCALO', NULL, -12.9966, -38.5065, '(71) 3015-0052', 52, 52, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (53, 0, 'UBS SAO JUDAS TADEU', NULL, -12.9600, -38.4970, '(71) 3015-0053', 53, 53, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (54, 0, 'UBS SERGIO AROUCA - PARIPE', NULL, -12.8430, -38.4660, '(71) 3015-0054', 54, 54, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (55, 0, 'UBS SETE DE ABRIL', NULL, -12.9099, -38.4252, '(71) 3015-0055', 55, 55, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (56, 0, 'UBS VALE DOS LAGOS', NULL, -12.9430, -38.4480, '(71) 3015-0056', 56, 56, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (57, 0, 'UBS VILA MATOS', NULL, -13.0000, -38.5100, '(71) 3015-0057', 57, 57, now());
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES (58, 0, 'UBS VIRGILIO DE CARVALHO', NULL, -12.9288, -38.5066, '(71) 3015-0058', 58, 58, now());
 
+-- Dados base
 INSERT INTO ranking (id) VALUES (1);
-
-INSERT INTO usuario ( email, nome, senha) VALUES ( 'alana@gmail.com', 'Alana', '1234');
-
+INSERT INTO usuario (email, nome, senha) VALUES ('alana@gmail.com', 'Alana', '1234');
 INSERT INTO cliente (contribuicoes, id, ranking_id, cpf, endereco, telefone) VALUES (0, 1, 1, '12345678901', 'Rua A, 123', '(71) 99999-9999');
-
-INSERT INTO usuario ( email, nome, senha) VALUES ( 'rafael@gmail.com', 'Rafael', '12345');
-
+INSERT INTO usuario (email, nome, senha) VALUES ('rafael@gmail.com', 'Rafael', '12345');
 INSERT INTO funcionario (id, cpf, endereco, telefone) VALUES (2, '12345678901', 'Rua A, 123', '(71) 99999-9999');
-
-INSERT INTO comentario (cliente_id, data_hora, id, texto, informacoes_unidade_id) VALUES (1, '2023-10-01', 1, 'Ótimo atendimento!', 1);
-
+INSERT INTO comentario (cliente_id, data_hora, id, texto, informacoes_unidade_id) VALUES (1, '2023-10-01', 1, 'Otimo atendimento!', 1);
 INSERT INTO avaliacao (nota, cliente_id, informacoes_unidade_id, id, data_hora) VALUES (5, 1, 1, 1, '2023-10-01');
 
-
+-- Ajustar sequences
+SELECT setval('estado_id_seq', (SELECT COALESCE(MAX(id), 1) FROM estado));
+SELECT setval('cidade_id_seq', (SELECT COALESCE(MAX(id), 1) FROM cidade));
+SELECT setval('bairro_id_seq', (SELECT COALESCE(MAX(id), 1) FROM bairro));
+SELECT setval('endereco_id_seq', (SELECT COALESCE(MAX(id), 1) FROM endereco));
+SELECT setval('unidade_id_seq', (SELECT COALESCE(MAX(id), 1) FROM unidade));
+SELECT setval('informacoes_unidade_id_seq', (SELECT COALESCE(MAX(id), 1) FROM informacoes_unidade));
