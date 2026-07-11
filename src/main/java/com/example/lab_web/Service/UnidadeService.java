@@ -2,11 +2,12 @@ package com.example.lab_web.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.lab_web.DTO.UnidadeDTO;
 import com.example.lab_web.DTO.UnidadePaginaDTO;
@@ -86,33 +87,33 @@ public class UnidadeService {
         return 1;
     }
 
+    @Transactional(readOnly = true)
     public UnidadePaginaDTO getUnidade(Long id) {
         Unidade unidade = unidadeRepository.findById(id).orElse(null);
         InformacoesUnidade informacoesUnidade = informacoesUnidadeRepository.buscarInformacoesUnidadePorIdUnidade(id);
         return new UnidadePaginaDTO(unidade, informacoesUnidade);
     }
 
+    @Transactional(readOnly = true)
     public List<UnidadeDTO> getUnidades() {
-        List<Unidade> unidades = unidadeRepository.findAll();
+        List<Unidade> unidades = unidadeRepository.findAllWithHistorico();
+        List<InformacoesUnidade> todasInfos = informacoesUnidadeRepository.buscarTodasComEndereco();
+
+        Map<Long, InformacoesUnidade> mapaInfos = todasInfos.stream()
+            .collect(Collectors.toMap(info -> info.getUnidade().getId(), info -> info));
 
         return unidades.stream().map(unidade -> {
-            // 1. Buscar InformacoesUnidade relacionada à Unidade
-            // Assumindo que você tem um método para buscar InformacoesUnidade por id_unidade
-            Optional<InformacoesUnidade> informacoesUnidadeOpt = informacoesUnidadeRepository.findById(unidade.getId());
-            InformacoesUnidade informacoesUnidade = informacoesUnidadeOpt.orElse(null); // Tratar caso não encontre
+            InformacoesUnidade informacoesUnidade = mapaInfos.get(unidade.getId());
 
             Atualizacao ultimaAtualizacao = null;
-            HistoricoDeAtualizacao historicoAtualizacao = unidade.getHistoricoDeAtualizacao(); // Obtenha o histórico diretamente da Unidade
+            HistoricoDeAtualizacao historicoAtualizacao = unidade.getHistoricoDeAtualizacao();
 
             if (historicoAtualizacao != null && historicoAtualizacao.getAtualizacoes() != null && !historicoAtualizacao.getAtualizacoes().isEmpty()) {
-                // Se a anotação @OrderBy("dataHora DESC") já estiver na entidade HistoricoDeAtualizacao.atualizacoes,
-                // a primeira atualização na lista já será a mais recente.
                 ultimaAtualizacao = historicoAtualizacao.getAtualizacoes().get(0);
             }
 
-            int n = informacoesUnidadeRepository.getNota(unidade.getId());
+            int n = informacoesUnidade != null ? informacoesUnidade.getNota() : 0;
 
-            // Crie e retorne o DTO
             return new UnidadeDTO(unidade, informacoesUnidade, ultimaAtualizacao, n);
         }).collect(Collectors.toList());
     }

@@ -20,20 +20,21 @@ public class UnidadeDTO {
     private Endereco endereco; 
     private String telefone; 
     private String imagemURL; 
-    private Atualizacao ultimaAtualizacao; 
+    private Atualizacao ultimaAtualizacao;
+    private Double lat;
+    private Double lng;
    
     public UnidadeDTO(Unidade unidade, InformacoesUnidade informacoesUnidade, Atualizacao ultimaAtualizacao, int nota) {
         this.id = unidade.getId();
         if (informacoesUnidade != null) {
             this.nome = informacoesUnidade.getNome();
             this.telefone = informacoesUnidade.getTelefone();
-            this.imagemURL = informacoesUnidade.getImagemURL(); 
+            this.imagemURL = informacoesUnidade.getImagemURL();
+            this.lat = informacoesUnidade.getLat();
+            this.lng = informacoesUnidade.getLng();
         }
 
         if (unidade != null) {
-            // O status da Unidade no ERD está em HistoricoAtualizacao. Vamos assumir que você buscará o status mais recente.
-            // Se Unidade tivesse um campo 'status' diretamente, seria mais simples.
-            // Por enquanto, vamos assumir que 'status' virá da 'ultimaAtualizacao'
             this.status = unidade.getStatus(); 
         }
         

@@ -73,6 +73,6 @@ INSERT INTO funcionario (id, cpf, endereco, telefone) VALUES (2, '12345678901', 
 
 INSERT INTO comentario (cliente_id, data_hora, id, texto, informacoes_unidade_id) VALUES (1, '2023-10-01', 1, 'Ótimo atendimento!', 1);
 
-INSERT INTO avaliacao (nota, cliente_id, comentario_id, id) VALUES (5, 1, 1, 1);
+INSERT INTO avaliacao (nota, cliente_id, informacoes_unidade_id, id, data_hora) VALUES (5, 1, 1, 1, '2023-10-01');
 
 

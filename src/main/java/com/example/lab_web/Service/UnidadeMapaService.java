@@ -27,8 +27,8 @@ public class UnidadeMapaService {
         return unidades.stream()
                 .map(unidade -> {
                     InformacoesUnidade info = informacoesUnidadeRepository.findByUnidade(unidade)
-                        .orElseThrow(() -> new RuntimeException(
-                            "Informações não encontradas para unidade id: " + unidade.getId()));
+                        .orElse(null);
+                    if (info == null) return null;
     
                     return new UnidadeMapaDTO(
                         info.getNome(),
@@ -37,6 +37,7 @@ public class UnidadeMapaService {
                         unidade.getStatus().name()
                     );
                 })
+                .filter(dto -> dto != null)
                 .collect(Collectors.toList());
     }
     

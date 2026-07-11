@@ -1,5 +1,6 @@
 package com.example.lab_web.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,6 +19,9 @@ public interface InformacoesUnidadeRepository extends JpaRepository<InformacoesU
 
     @Query("SELECT i FROM InformacoesUnidade i WHERE i.unidade.id = :idUnidade")
     InformacoesUnidade buscarInformacoesUnidadePorIdUnidade(@Param("idUnidade") Long idUnidade);
+
+    @Query("SELECT i FROM InformacoesUnidade i LEFT JOIN FETCH i.endereco e LEFT JOIN FETCH e.bairro b LEFT JOIN FETCH b.cidade c LEFT JOIN FETCH c.estado")
+    List<InformacoesUnidade> buscarTodasComEndereco();
 
     Optional<InformacoesUnidade> findByUnidade(Unidade unidade);
 }

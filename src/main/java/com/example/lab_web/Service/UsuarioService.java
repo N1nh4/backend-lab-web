@@ -33,6 +33,14 @@ public class UsuarioService {
         return cr.findByEmail(email);
     }
 
+    public Optional<Cliente> buscarPorId(Long id) {
+        return cr.findById(id);
+    }
+
+    public void atualizar(Cliente cliente) {
+        cr.save(cliente);
+    }
+
     public Optional<Funcionario> buscarPorEmailFuncionario(String email) {
         return fr.findByEmail(email);
     }

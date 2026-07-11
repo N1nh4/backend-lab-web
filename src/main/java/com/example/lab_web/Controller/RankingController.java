@@ -22,7 +22,7 @@ public class RankingController {
     public List<ClienteRankingDTO> getRanking() {
         return clienteRepository.findTop10ByOrderByContribuicoesDesc()
                 .stream()
-                .map(cliente -> new ClienteRankingDTO(cliente.getNome(), cliente.getContribuicoes()))
+                .map(cliente -> new ClienteRankingDTO(cliente.getNome(), cliente.getContribuicoes(), cliente.getFotoURL()))
                 .toList();
     }
 }

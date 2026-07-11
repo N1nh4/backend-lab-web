@@ -2,6 +2,7 @@ package com.example.lab_web.DTO;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.example.lab_web.Model.Comentario;
 import com.example.lab_web.Model.Endereco;
@@ -15,29 +16,41 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UnidadePaginaDTO {
+    private Long id;
     private String nome;
     private int nota;
-    private Status status; 
-    private Endereco endereco; 
-    private String telefone; 
-    private String imagemURL; 
-    private List<Comentario> comentarios;
+    private Status status;
+    private Endereco endereco;
+    private String telefone;
+    private String imagemURL;
+    private List<ComentarioResponseDTO> comentarios;
     private LocalDateTime ultimaAtualizacao;
-   
+
     public UnidadePaginaDTO(Unidade unidade, InformacoesUnidade informacoesUnidade) {
+        if (unidade != null) {
+            this.id = unidade.getId();
+        }
         
         if (informacoesUnidade != null) {
             this.nome = informacoesUnidade.getNome();
             this.telefone = informacoesUnidade.getTelefone();
             this.imagemURL = informacoesUnidade.getImagemURL();
-            this.comentarios = informacoesUnidade.getComentarios();
             this.ultimaAtualizacao = informacoesUnidade.getUltimaAtualizacao();
+
+            if (informacoesUnidade.getComentarios() != null) {
+                this.comentarios = informacoesUnidade.getComentarios().stream()
+                    .map(c -> new ComentarioResponseDTO(
+                        c.getId(),
+                        c.getTexto(),
+                        c.getData_hora(),
+                        c.getCliente().getNome(),
+                        c.getCliente().getFotoURL()
+                    ))
+                    .collect(Collectors.toList());
+            }
         }
 
         if (unidade != null) {
-            // O status da Unidade no ERD está em HistoricoAtualizacao. Vamos assumir que você buscará o status mais recente.
-            // Se Unidade tivesse um campo 'status' diretamente, seria mais simples.
-            // Por enquanto, vamos assumir que 'status' virá da 'ultimaAtualizacao'
             this.status = unidade.getStatus(); 
         }
 
