@@ -1,7 +1,6 @@
 -- Limpar todos os dados
 DELETE FROM avaliacao;
 DELETE FROM comentario;
-DELETE FROM lotacao;
 DELETE FROM cliente;
 DELETE FROM funcionario;
 DELETE FROM usuario;
