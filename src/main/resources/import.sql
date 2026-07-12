@@ -1,13 +1,172 @@
--- Limpar todos os dados
-DELETE FROM avaliacao;
-DELETE FROM comentario;
-DELETE FROM cliente;
-DELETE FROM funcionario;
-DELETE FROM usuario;
-DELETE FROM informacoes_unidade;
-DELETE FROM unidade;
-DELETE FROM endereco;
-DELETE FROM bairro;
-DELETE FROM cidade;
-DELETE FROM estado;
-DELETE FROM ranking;
+-- ============================================
+-- 46 UBS de Salvador - Bahia
+-- ============================================
+
+INSERT INTO estado (id, nome) VALUES (1, 'Bahia');
+INSERT INTO cidade (id, nome, estado_id) VALUES (1, 'Salvador', 1);
+
+-- Bairros (IDs 1-45, cidade_id=1 = Salvador)
+INSERT INTO bairro (id, nome, cidade_id) VALUES
+(1, 'Baixa dos Sapateiros', 1),
+(2, 'Arenoso', 1),
+(3, 'Cabula', 1),
+(4, 'Canabrava', 1),
+(5, 'Castelo Branco', 1),
+(6, 'Centenario', 1),
+(7, 'Calabetao', 1),
+(8, 'Engomadeira', 1),
+(9, 'Mata Escura', 1),
+(10, 'Paripe', 1),
+(11, 'Bariri', 1),
+(12, 'Pernambues', 1),
+(13, 'Boca do Rio', 1),
+(14, 'Bairro da Paz', 1),
+(15, 'Barbalho', 1),
+(16, 'Faz Grande do Retiro', 1),
+(17, 'Castelo Branco 2', 1),
+(18, 'Engenho Velho da Federacao', 1),
+(19, 'Saboeiro', 1),
+(20, 'Valeria', 1),
+(21, 'Cosme de Farias', 1),
+(22, 'Brotas', 1),
+(23, 'Marechal Rondon', 1),
+(24, 'Pau Miudo', 1),
+(25, 'Massaranduba', 1),
+(26, 'Aguas Claras', 1),
+(27, 'Santa Cruz', 1),
+(28, 'Periperi', 1),
+(29, 'Pau da Lima', 1),
+(30, 'Liberdade', 1),
+(31, 'Vale das Pedrinhas', 1),
+(32, 'Itapoan', 1),
+(33, 'Sete Portas', 1),
+(34, 'Campo da Polvora', 1),
+(35, 'Tancredo Neves', 1),
+(36, 'Santo Antonio', 1),
+(37, 'Santo Inacio', 1),
+(38, 'Sao Cristovao', 1),
+(39, 'Federacao', 1),
+(40, 'Sete de Abril', 1),
+(41, 'Vale dos Lagos', 1),
+(42, 'Rio Vermelho', 1),
+(43, 'Bonfim', 1),
+(44, 'Pernambues 2', 1),
+(45, 'Pau Miudo 2', 1);
+
+-- Enderecos (IDs 1-46)
+INSERT INTO endereco (id, bairro_id, cep, numero, rua) VALUES
+(1, 1, '40020-286', '147', 'AVENIDA JJ SEABRA'),
+(2, 2, '41211-405', '100', 'RUA DIRETA DO ARENOSO'),
+(3, 3, '41195-240', 'S/N', 'ESTRADA DAS BARREIRAS'),
+(4, 4, '41260-340', 'S/N', 'RUA BEM TE VI'),
+(5, 5, '41320-010', 'S/N', 'RUA A 3 ETAPA'),
+(6, 6, '40100-180', 'S/N', 'AV CENTENARIO'),
+(7, 7, '41227-050', 'S/N', 'RUA CLERISTON ANDRADE'),
+(8, 8, '41200-510', 'S/N', 'RUA DIRETA DA ENGOMADEIRA'),
+(9, 9, '40010-010', 'S/N', 'RUA JARDIM PAMPULHA'),
+(10, 10, '40800-460', 'S/N', 'RUA ALMIRANTE BARROSO'),
+(11, 11, '40715-700', 'S/N', 'PRACA DO BARIRI'),
+(12, 12, '41130-000', '150', 'RUA TOMAZ GONZAGA'),
+(13, 13, '41710-450', '8', 'RUA MANOEL QUARESMA'),
+(14, 14, '41515-235', 'S/N', 'RUA TANCREDO NEVES'),
+(15, 15, '40301-150', '4', 'RUA PROF ARTUR MENDES DE AGUIAR'),
+(16, 16, '40353-150', '32', 'RUA DAS PITANGUEIRAS'),
+(17, 17, '41320-100', 'S/N', 'RUA GENARO DE CARVALHO'),
+(18, 18, '40750-260', '201', 'RUA APOLINARIO SANTANA'),
+(19, 19, '41180-780', 'S/N', 'RUA JURUCUTUS'),
+(20, 20, '41300-600', 'S/N', 'RUA DA MATRIZ'),
+(21, 21, '40050-002', 'S/N', 'RUA DIRETA DE COSME DE FARIAS'),
+(22, 22, '40285-000', '450', 'AV D JOAO VI'),
+(23, 23, '41280-119', 'S/N', 'RUA VICENTE CELESTINO'),
+(24, 24, '40310-000', 'S/N', 'RUA MARQUES DE MARICA'),
+(25, 25, '40435-000', 'S/N', 'RUA LOPES TROVAO'),
+(26, 26, '41310-380', 'S/N', 'RUA ENDEO NASCIMENTO'),
+(27, 27, '41925-300', 'S/N', 'RUA DR ARMANDO COLAVOLPE'),
+(28, 28, '40720-130', 'S/N', 'RUA DOM PEDRO II'),
+(29, 29, '41110-200', 'S/N', 'RUA TOMAZ GONZAGA'),
+(30, 30, '40080-002', 'S/N', 'RUA JAIME VIEIRA LIMA'),
+(31, 31, '40375-017', '217', 'RUA LIMA E SILVA'),
+(32, 32, '41905-615', 'S/N', 'AVENIDA VALE DAS PEDRINHAS'),
+(33, 33, '41635-152', 'S/N', 'AV DORIVAL CAYME'),
+(34, 34, '40300-305', 'S/N', 'RUA FORTUNATO BENJAMIN SABACK'),
+(35, 35, '40040-280', '8', 'PRACA D PEDRO II'),
+(36, 36, '41205-140', 'S/N', 'RUA PERNAMBUCO'),
+(37, 37, '40301-460', '238', 'PRACA DOS 15 MISTERIOS'),
+(38, 38, '41231-310', 'S/N', 'RUA DIRETA DO SANTO INACIO'),
+(39, 39, '41500-260', '2', 'RUA ALTO DA BOA VISTA'),
+(40, 40, '40231-250', 'S/N', 'AVENIDA CARDEAL DA SILVA'),
+(41, 44, '40310-300', 'S/N', 'RUA PROFESSOR SUEIRO'),
+(42, 10, '40800-003', 'S/N', 'AVENIDA CARIOCA DE PARIPE'),
+(43, 40, '41385-740', 'S/N', 'RUA DA FELICIA'),
+(44, 41, '41250-190', 'S/N', 'RUA ESTRADA DAS MURICOCAS'),
+(45, 42, '40170-010', '4015', 'AVENIDA OCEANICA'),
+(46, 43, '40415-060', 'S/N', 'RUA DUARTE DA COSTA');
+
+-- Unidades (IDs 1-46)
+INSERT INTO unidade (id, status) VALUES
+(1, 'SEM_INFORMACAO'), (2, 'SEM_INFORMACAO'), (3, 'SEM_INFORMACAO'),
+(4, 'SEM_INFORMACAO'), (5, 'SEM_INFORMACAO'), (6, 'SEM_INFORMACAO'),
+(7, 'SEM_INFORMACAO'), (8, 'SEM_INFORMACAO'), (9, 'SEM_INFORMACAO'),
+(10, 'SEM_INFORMACAO'), (11, 'SEM_INFORMACAO'), (12, 'SEM_INFORMACAO'),
+(13, 'SEM_INFORMACAO'), (14, 'SEM_INFORMACAO'), (15, 'SEM_INFORMACAO'),
+(16, 'SEM_INFORMACAO'), (17, 'SEM_INFORMACAO'), (18, 'SEM_INFORMACAO'),
+(19, 'SEM_INFORMACAO'), (20, 'SEM_INFORMACAO'), (21, 'SEM_INFORMACAO'),
+(22, 'SEM_INFORMACAO'), (23, 'SEM_INFORMACAO'), (24, 'SEM_INFORMACAO'),
+(25, 'SEM_INFORMACAO'), (26, 'SEM_INFORMACAO'), (27, 'SEM_INFORMACAO'),
+(28, 'SEM_INFORMACAO'), (29, 'SEM_INFORMACAO'), (30, 'SEM_INFORMACAO'),
+(31, 'SEM_INFORMACAO'), (32, 'SEM_INFORMACAO'), (33, 'SEM_INFORMACAO'),
+(34, 'SEM_INFORMACAO'), (35, 'SEM_INFORMACAO'), (36, 'SEM_INFORMACAO'),
+(37, 'SEM_INFORMACAO'), (38, 'SEM_INFORMACAO'), (39, 'SEM_INFORMACAO'),
+(40, 'SEM_INFORMACAO'), (41, 'SEM_INFORMACAO'), (42, 'SEM_INFORMACAO'),
+(43, 'SEM_INFORMACAO'), (44, 'SEM_INFORMACAO'), (45, 'SEM_INFORMACAO'),
+(46, 'SEM_INFORMACAO');
+
+-- Informacoes das Unidades (IDs 1-46) - Coordenadas geolocalizadas
+INSERT INTO informacoes_unidade (id, nota, nome, imagemURL, lat, lng, telefone, endereco_id, unidade_id, ultima_atualizacao) VALUES
+(1, 0, 'UBS 19o CENTRO DE SAUDE PELOURINHO', NULL, -12.9740, -38.5100, '(71) 3015-0001', 1, 1, now()),
+(2, 0, 'UBS ARENOSO', NULL, -12.9508, -38.4395, '(71) 3015-0002', 2, 2, now()),
+(3, 0, 'UBS BARREIRAS', NULL, -12.9420, -38.4564, '(71) 3015-0003', 3, 3, now()),
+(4, 0, 'UBS CANABRAVA', NULL, -12.9300, -38.4500, '(71) 3015-0004', 4, 4, now()),
+(5, 0, 'UBS CASTELO BRANCO', NULL, -12.9530, -38.4580, '(71) 3015-0005', 5, 5, now()),
+(6, 0, 'UBS CLEMENTINO FRAGA', NULL, -12.9917, -38.5120, '(71) 3015-0006', 6, 6, now()),
+(7, 0, 'UBS DE CALABETAO', NULL, -12.9317, -38.4679, '(71) 3015-0007', 7, 7, now()),
+(8, 0, 'UBS DE ENGOMADEIRA', NULL, -12.9494, -38.4584, '(71) 3015-0008', 8, 8, now()),
+(9, 0, 'UBS DE MATA ESCURA', NULL, -12.9372, -38.4612, '(71) 3015-0009', 9, 9, now()),
+(10, 0, 'UBS DE PARIPE', NULL, -12.8416, -38.4648, '(71) 3015-0010', 10, 10, now()),
+(11, 0, 'UBS DO BARIRI', NULL, -12.9350, -38.5050, '(71) 3015-0011', 11, 11, now()),
+(12, 0, 'UBS DO CSU PERNAMBUES', NULL, -12.9703, -38.4615, '(71) 3015-0012', 12, 12, now()),
+(13, 0, 'UBS DR CESAR DE ARAUJO', NULL, -12.9796, -38.4335, '(71) 3015-0013', 13, 13, now()),
+(14, 0, 'UBS DR ORLANDO IMBASSAHY', NULL, -12.9660, -38.5060, '(71) 3015-0014', 14, 14, now()),
+(15, 0, 'UBS DR PERICLES ESTEVES CARDOSO', NULL, -12.9680, -38.5008, '(71) 3015-0015', 15, 15, now()),
+(16, 0, 'UBS DR PERICLES LARANJEIRAS', NULL, -12.9435, -38.4751, '(71) 3015-0016', 16, 16, now()),
+(17, 0, 'UBS DRA CECY DE ANDRADE', NULL, -12.9540, -38.4600, '(71) 3015-0017', 17, 17, now()),
+(18, 0, 'UBS ENGENHO VELHO DA FEDERACAO', NULL, -12.9620, -38.4980, '(71) 3015-0018', 18, 18, now()),
+(19, 0, 'UBS EUNISIO COELHO TEIXEIRA', NULL, -12.9576, -38.4481, '(71) 3015-0019', 19, 19, now()),
+(20, 0, 'UBS FREI BENJAMIM VALERIA', NULL, -12.8697, -38.4331, '(71) 3015-0020', 20, 20, now()),
+(21, 0, 'UBS MAJOR COSME DE FARIAS', NULL, -12.9806, -38.4893, '(71) 3015-0021', 21, 21, now()),
+(22, 0, 'UBS MANOEL VITORINO', NULL, -12.9650, -38.4950, '(71) 3015-0022', 22, 22, now()),
+(23, 0, 'UBS MARECHAL RONDON', NULL, -12.9156, -38.4706, '(71) 3015-0023', 23, 23, now()),
+(24, 0, 'UBS MARIA DA CONCEICAO SANTIAGO', NULL, -12.9602, -38.4838, '(71) 3015-0024', 24, 24, now()),
+(25, 0, 'UBS MINISTRO ALKIMIN', NULL, -12.9272, -38.5030, '(71) 3015-0025', 25, 25, now()),
+(26, 0, 'UBS NELSON PIAUHY DOURADO', NULL, -12.8858, -38.4307, '(71) 3015-0026', 26, 26, now()),
+(27, 0, 'UBS OSVALDO CALDAS CAMPOS', NULL, -13.0018, -38.4751, '(71) 3015-0027', 27, 27, now()),
+(28, 0, 'UBS PERIPERI', NULL, -12.9560, -38.4710, '(71) 3015-0028', 28, 28, now()),
+(29, 0, 'UBS PERNAMBUES EDSON T BARBOSA', NULL, -12.9703, -38.4614, '(71) 3015-0029', 29, 29, now()),
+(30, 0, 'UBS PIRES DA VEIGA', NULL, -12.9198, -38.4785, '(71) 3015-0030', 30, 30, now()),
+(31, 0, 'UBS PROF BEZERRA LOPES', NULL, -12.9495, -38.4962, '(71) 3015-0031', 31, 31, now()),
+(32, 0, 'UBS PROF EDUARDO ARAUJO', NULL, -13.0077, -38.4826, '(71) 3015-0032', 32, 32, now()),
+(33, 0, 'UBS PROF JOSE MARIANE', NULL, -12.9405, -38.3640, '(71) 3015-0033', 33, 33, now()),
+(34, 0, 'UBS PROF MARIO ANDREA', NULL, -12.9690, -38.4967, '(71) 3015-0034', 34, 34, now()),
+(35, 0, 'UBS RAMIRO DE AZEVEDO', NULL, -12.9791, -38.5085, '(71) 3015-0035', 35, 35, now()),
+(36, 0, 'UBS RODRIGO ARGOLO', NULL, -12.9440, -38.4580, '(71) 3015-0036', 36, 36, now()),
+(37, 0, 'UBS SANTO ANTONIO', NULL, -12.9710, -38.5040, '(71) 3015-0037', 37, 37, now()),
+(38, 0, 'UBS SANTO INACIO', NULL, -12.9326, -38.4620, '(71) 3015-0038', 38, 38, now()),
+(39, 0, 'UBS SAO CRISTOVAO', NULL, -12.9500, -38.4900, '(71) 3015-0039', 39, 39, now()),
+(40, 0, 'UBS SAO GONCALO', NULL, -12.9966, -38.5065, '(71) 3015-0040', 40, 40, now()),
+(41, 0, 'UBS SAO JUDAS TADEU', NULL, -12.9589, -38.4836, '(71) 3015-0041', 41, 41, now()),
+(42, 0, 'UBS SERGIO AROUCA', NULL, -12.8416, -38.4709, '(71) 3015-0042', 42, 42, now()),
+(43, 0, 'UBS SETE DE ABRIL', NULL, -12.9099, -38.4252, '(71) 3015-0043', 43, 43, now()),
+(44, 0, 'UBS VALE DOS LAGOS', NULL, -12.9600, -38.4650, '(71) 3015-0044', 44, 44, now()),
+(45, 0, 'UBS VILA MATOS', NULL, -13.0000, -38.5000, '(71) 3015-0045', 45, 45, now()),
+(46, 0, 'UBS VIRGILIO DE CARVALHO', NULL, -12.9288, -38.5066, '(71) 3015-0046', 46, 46, now());
+
