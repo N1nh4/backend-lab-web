@@ -26,6 +26,8 @@ import com.example.lab_web.Service.ClienteService;
 import com.example.lab_web.Service.UnidadeService;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 @RestController
 @RequestMapping("/")
@@ -84,6 +86,57 @@ public class UnidadeController {
         comentarioRepository.save(comentario);
 
         return ResponseEntity.status(HttpStatus.CREATED).body("Comentário adicionado com sucesso!");
+    }
+
+    @PutMapping("/unidade/{id}/comentario/{comentarioId}")
+    public ResponseEntity<?> editarComentario(
+            @PathVariable Long id,
+            @PathVariable Long comentarioId,
+            @RequestBody ComentarioDTO dto) {
+
+        Cliente cliente = clienteRepository.findById(dto.getClienteId()).orElse(null);
+        if (cliente == null) {
+            return ResponseEntity.badRequest().body("Cliente não encontrado");
+        }
+
+        Comentario comentario = comentarioRepository.findById(comentarioId).orElse(null);
+        if (comentario == null) {
+            return ResponseEntity.badRequest().body("Comentário não encontrado");
+        }
+
+        if (!comentario.getCliente().getId().equals(dto.getClienteId())) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Você só pode editar seus próprios comentários");
+        }
+
+        comentario.setTexto(dto.getTexto());
+        comentarioRepository.save(comentario);
+
+        return ResponseEntity.ok("Comentário atualizado com sucesso!");
+    }
+
+    @DeleteMapping("/unidade/{id}/comentario/{comentarioId}")
+    public ResponseEntity<?> excluirComentario(
+            @PathVariable Long id,
+            @PathVariable Long comentarioId,
+            @RequestBody ComentarioDTO dto) {
+
+        Cliente cliente = clienteRepository.findById(dto.getClienteId()).orElse(null);
+        if (cliente == null) {
+            return ResponseEntity.badRequest().body("Cliente não encontrado");
+        }
+
+        Comentario comentario = comentarioRepository.findById(comentarioId).orElse(null);
+        if (comentario == null) {
+            return ResponseEntity.badRequest().body("Comentário não encontrado");
+        }
+
+        if (!comentario.getCliente().getId().equals(dto.getClienteId())) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Você só pode excluir seus próprios comentários");
+        }
+
+        comentarioRepository.delete(comentario);
+
+        return ResponseEntity.ok("Comentário excluído com sucesso!");
     }
 
     @PostMapping("/unidade/{id}/avaliacao")

@@ -44,7 +44,8 @@ public class UnidadePaginaDTO {
                         c.getTexto(),
                         c.getData_hora(),
                         c.getCliente().getNome(),
-                        c.getCliente().getFotoURL()
+                        c.getCliente().getFotoURL(),
+                        c.getCliente().getId()
                     ))
                     .collect(Collectors.toList());
             }
