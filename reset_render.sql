@@ -1,0 +1,34 @@
+-- =============================================
+-- RESET COMPLETO DO BANCO NO RENDER
+-- Rode no Data Shell do Render
+-- =============================================
+
+-- Apagar todas as tabelas na ordem correta
+DROP TABLE IF EXISTS avaliacao CASCADE;
+DROP TABLE IF EXISTS comentario CASCADE;
+DROP TABLE IF EXISTS lotacao CASCADE;
+DROP TABLE IF EXISTS cliente CASCADE;
+DROP TABLE IF EXISTS funcionario CASCADE;
+DROP TABLE IF EXISTS usuario CASCADE;
+DROP TABLE IF EXISTS informacoes_unidade CASCADE;
+DROP TABLE IF EXISTS unidade CASCADE;
+DROP TABLE IF EXISTS endereco CASCADE;
+DROP TABLE IF EXISTS bairro CASCADE;
+DROP TABLE IF EXISTS cidade CASCADE;
+DROP TABLE IF EXISTS estado CASCADE;
+DROP TABLE IF EXISTS ranking CASCADE;
+
+-- Apagar sequences
+DROP SEQUENCE IF EXISTS avaliacao_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS comentario_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS lotacao_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS cliente_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS funcionario_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS usuario_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS informacoes_unidade_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS unidade_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS endereco_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS bairro_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS cidade_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS estado_id_seq CASCADE;
+DROP SEQUENCE IF EXISTS ranking_id_seq CASCADE;
