@@ -20,17 +20,9 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         try (Connection conn = dataSource.getConnection()) {
-            var rs = conn.prepareStatement("SELECT COUNT(*) FROM unidade").executeQuery();
-            rs.next();
-            int count = rs.getInt(1);
-
-            if (count == 0) {
-                System.out.println("[DataInitializer] Banco vazio, executando import.sql...");
-                ScriptUtils.executeSqlScript(conn, new ClassPathResource("import.sql"));
-                System.out.println("[DataInitializer] import.sql executado com sucesso.");
-            } else {
-                System.out.println("[DataInitializer] Banco ja possui dados (" + count + " unidades). Ignorando.");
-            }
+            System.out.println("[DataInitializer] Limpando e reimportando dados...");
+            ScriptUtils.executeSqlScript(conn, new ClassPathResource("import.sql"));
+            System.out.println("[DataInitializer] Dados importados com sucesso.");
         }
     }
 }
