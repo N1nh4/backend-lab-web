@@ -8,7 +8,9 @@ import com.example.lab_web.DTO.UsuarioDTO;
 import com.example.lab_web.Model.Cliente;
 import com.example.lab_web.Model.Funcionario;
 import com.example.lab_web.Model.Usuario;
+import com.example.lab_web.Repository.AvaliacaoRepository;
 import com.example.lab_web.Repository.ClienteRepository;
+import com.example.lab_web.Repository.ComentarioRepository;
 import com.example.lab_web.Repository.FuncionarioRepository;
 import com.example.lab_web.Repository.UsuarioRepository;
 
@@ -18,11 +20,15 @@ public class UsuarioService {
     private UsuarioRepository ur;
     private ClienteRepository cr;
     private FuncionarioRepository fr;
+    private ComentarioRepository comentarioRepository;
+    private AvaliacaoRepository avaliacaoRepository;
 
-    public UsuarioService(UsuarioRepository ur, ClienteRepository cr, FuncionarioRepository fr) {
+    public UsuarioService(UsuarioRepository ur, ClienteRepository cr, FuncionarioRepository fr, ComentarioRepository comentarioRepository, AvaliacaoRepository avaliacaoRepository) {
         this.ur = ur;
         this.cr = cr;
         this.fr = fr;
+        this.comentarioRepository = comentarioRepository;
+        this.avaliacaoRepository = avaliacaoRepository;
     }
 
     public void criarConta(Cliente cliente) {
@@ -43,6 +49,12 @@ public class UsuarioService {
 
     public Optional<Funcionario> buscarPorEmailFuncionario(String email) {
         return fr.findByEmail(email);
+    }
+
+    public void deletarConta(Long clienteId) {
+        comentarioRepository.deleteByClienteId(clienteId);
+        avaliacaoRepository.deleteByClienteId(clienteId);
+        cr.deleteById(clienteId);
     }
     
 }

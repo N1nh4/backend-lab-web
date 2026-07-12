@@ -11,4 +11,6 @@ import com.example.lab_web.Model.Comentario;
 public interface ComentarioRepository extends JpaRepository<Comentario, Long> {
     @Query("SELECT c FROM Comentario c WHERE c.informacoesUnidade.unidade.id = :idUnidade")
     Iterable<Comentario> buscarComentariosPorUnidade(@Param("idUnidade") Long idUnidade);
+
+    void deleteByClienteId(Long clienteId);
 }

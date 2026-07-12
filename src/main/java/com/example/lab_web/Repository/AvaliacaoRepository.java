@@ -19,6 +19,8 @@ public interface AvaliacaoRepository extends JpaRepository<Avaliacao, Long> {
 
     Optional<Avaliacao> findByClienteIdAndInformacoesUnidadeId(Long clienteId, Long informacoesUnidadeId);
 
+    void deleteByClienteId(Long clienteId);
+
     @Query("SELECT COALESCE(AVG(a.nota), 0) FROM Avaliacao a WHERE a.informacoesUnidade.id = :informacoesUnidadeId")
     double calcularMediaNota(@Param("informacoesUnidadeId") Long informacoesUnidadeId);
 }

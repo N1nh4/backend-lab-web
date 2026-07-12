@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -191,6 +192,22 @@ public class UsuarioController {
         us.atualizar(cliente);
 
         resposta.put("mensagem", "Senha atualizada com sucesso");
+        return ResponseEntity.ok(resposta);
+    }
+
+    @DeleteMapping("/usuario/{id}")
+    public ResponseEntity<Map<String, String>> deletarConta(@PathVariable Long id) {
+        Map<String, String> resposta = new HashMap<>();
+        Optional<Cliente> clienteOpt = us.buscarPorId(id);
+
+        if (clienteOpt.isEmpty()) {
+            resposta.put("mensagem", "Usuário não encontrado");
+            return ResponseEntity.status(404).body(resposta);
+        }
+
+        us.deletarConta(id);
+
+        resposta.put("mensagem", "Conta excluída com sucesso");
         return ResponseEntity.ok(resposta);
     }
 
