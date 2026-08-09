@@ -42,11 +42,18 @@ public class NotificacaoController {
     }
 
     @DeleteMapping
-    public ResponseEntity<Map<String, String>> desativarNotificacao(@RequestBody EmailDTO dto) {
-        notificacaoService.cancelar(dto.getEmail(), dto.getIdUnidade());
+    public ResponseEntity<Map<String, String>> desativarNotificacao(
+            @RequestParam String email,
+            @RequestParam Long idUnidade) {
         Map<String, String> response = new HashMap<>();
-        response.put("resposta", "Notificação desativada com sucesso");
-        return ResponseEntity.ok(response);
+        try {
+            notificacaoService.cancelar(email, idUnidade);
+            response.put("resposta", "Notificação desativada com sucesso");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            response.put("resposta", "Erro ao desativar notificação: " + e.getMessage());
+            return ResponseEntity.status(500).body(response);
+        }
     }
 
     @GetMapping
