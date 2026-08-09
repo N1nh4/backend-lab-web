@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,6 +23,8 @@ import com.example.lab_web.Service.NotificacaoService;
 @RequestMapping("/salvar-email-notificacao")
 @CrossOrigin("*")
 public class NotificacaoController {
+
+    private static final Logger log = LoggerFactory.getLogger(NotificacaoController.class);
 
     private NotificacaoService notificacaoService;
 
@@ -51,6 +55,7 @@ public class NotificacaoController {
             response.put("resposta", "Notificação desativada com sucesso");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
+            log.error("Erro ao desativar notificação email={} idUnidade={}", email, idUnidade, e);
             response.put("resposta", "Erro ao desativar notificação: " + e.getMessage());
             return ResponseEntity.status(500).body(response);
         }
