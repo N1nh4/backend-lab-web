@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.lab_web.Model.InformacoesUnidade;
 import com.example.lab_web.Model.InscricaoNotificacao;
@@ -54,6 +55,7 @@ public class NotificacaoService {
                 email, unidadeId, unidade.getStatus());
     }
 
+    @Transactional
     public void cancelar(String email, Long unidadeId) {
         inscricaoRepository.deleteByEmailAndUnidadeId(email, unidadeId);
         log.info("Assinatura removida: {} deixou de acompanhar a unidade {}", email, unidadeId);
