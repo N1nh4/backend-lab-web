@@ -53,4 +53,17 @@ public class NotificacaoController {
     public ResponseEntity<List<Long>> listarUnidadesInscritas(@RequestParam String email) {
         return ResponseEntity.ok(notificacaoService.listarUnidadesInscritas(email));
     }
+
+    @PostMapping("/email-teste")
+    public ResponseEntity<Map<String, String>> enviarEmailTeste(@RequestBody Map<String, String> body) {
+        Map<String, String> response = new HashMap<>();
+        try {
+            notificacaoService.enviarEmailTeste(body.get("email"));
+            response.put("resposta", "Email de teste enviado com sucesso");
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            response.put("resposta", "Erro ao enviar email de teste: " + e.getMessage());
+            return ResponseEntity.status(500).body(response);
+        }
+    }
 }

@@ -9,6 +9,8 @@ public class EmailDTO {
     private String email;
     private Long idUnidade;
 
+    public EmailDTO() {}
+
     public EmailDTO(String email, Long idUnidade) {
         this.email = email;
         this.idUnidade = idUnidade;
